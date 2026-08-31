@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gretel privacy policy</title>
+<meta name="description" content="Gretel collects nothing. No accounts, analytics, ads, crash reporters, telemetry, or network permission.">
+<link rel="canonical" href="https://abeant.github.io/gretel/privacy.html">
+<link rel="icon" href="assets/icon.png">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #000; background: #fff;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  a { color: #000; text-underline-offset: 3px; }
+  h1 { font-size: 15px; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 40px; font-weight: 700; }
+  h2 { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; margin: 48px 0 14px; font-weight: 700; }
+  .lede { font-size: 28px; line-height: 1.25; font-weight: 700; letter-spacing: -.02em; margin: 0 0 28px; }
+  .rule { border: 0; border-top: 2px solid currentColor; margin: 48px 0; }
+  ul { padding-left: 20px; }
+  li { margin: 10px 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+  footer { margin-top: 64px; font-size: 15px; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #fff; background: #000; }
+    a { color: #fff; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1><a href="./">Gretel</a></h1>
+
+  <p class="lede">Gretel collects nothing.</p>
+
+  <p>Gretel is the Android app published under the package name <code>com.abeant.gretel</code>. This policy covers that app and this website. It applies to every distribution channel, including GitHub Releases, F-Droid, and Google Play.</p>
+
+  <h2>Data we collect</h2>
+  <p>None. Gretel has no server, no account system, and no way to send anything anywhere.</p>
+  <ul>
+    <li>No personal or sensitive user data is collected, transmitted, or shared.</li>
+    <li>No accounts, analytics, advertising, crash reporters, or telemetry.</li>
+    <li>No Google Play Services, Firebase, or Crashlytics.</li>
+    <li>No <code>INTERNET</code> permission, so the app cannot make network calls even in principle.</li>
+    <li>No contacts, location, storage, microphone, camera, or SMS permissions.</li>
+  </ul>
+
+  <h2>Data stored on your device</h2>
+  <p>Gretel saves a small number of settings in Android's private per-app preference storage. That data never leaves the device and is not readable by other apps.</p>
+  <ul>
+    <li>The package name of the app you chose.</li>
+    <li>Whether you finished the introduction.</li>
+    <li>Your double-Home timing, theme, and the two reopen switches.</li>
+  </ul>
+  <p>Android backup and cloud backup are disabled for Gretel (<code>android:allowBackup="false"</code>), so these settings are not copied off the device by the system either. Uninstalling Gretel deletes all of it.</p>
+
+  <h2>Access to your installed apps</h2>
+  <p>To let you pick an app, Gretel asks Android for the list of apps that publish a launcher entry, using a scoped manifest <code>&lt;queries&gt;</code> declaration. Gretel does not request the <code>QUERY_ALL_PACKAGES</code> permission and does not see your full app list. Nothing about your installed apps is recorded or transmitted.</p>
+
+  <h2>Children</h2>
+  <p>Gretel is not directed at children and collects no data from anyone, including children.</p>
+
+  <h2>Third parties</h2>
+  <p>Gretel contains no third-party SDKs. This website loads no fonts, scripts, trackers, or other third-party resources. It is hosted on GitHub Pages, and GitHub may log ordinary web server request data as described in the <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
+
+  <h2>Changes</h2>
+  <p>Gretel is a local home app. If that ever changes, this policy changes first, and the change is visible in the public commit history at <a href="https://github.com/abeant/gretel">github.com/abeant/gretel</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Open an issue at <a href="https://github.com/abeant/gretel/issues">github.com/abeant/gretel/issues</a>.</p>
+
+  <hr class="rule">
+
+  <footer>
+    <p>Last updated 31 August 2026.</p>
+    <p><a href="./">Back to Gretel</a></p>
+  </footer>
+
+</main>
+</body>
+</html>

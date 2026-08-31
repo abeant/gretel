@@ -1,9 +1,26 @@
-Gretel es un iniciador Android minimalista: un anti-iniciador centrado en una app en lugar de una cuadrícula. Elige la app que quieres usar, configura Gretel como tu app de inicio y esa app se convierte en el lugar al que siempre vuelve tu dispositivo.
+Cada iniciador de Android te muestra una cuadrícula de apps y te pide elegir otra vez, cada vez que pulsas Inicio. Gretel te lo pregunta una sola vez.
 
-Está diseñada para lectores electrónicos, teléfonos de repuesto y tabletas que quieras convertir en herramientas enfocadas. Úsala para que KOReader u otra app de lectura sea la experiencia principal, o para crear un dispositivo sin distracciones para leer, escribir, consultar información o mostrar un panel. La interfaz de alto contraste está pensada para tinta electrónica, con objetivos táctiles grandes y sin animaciones innecesarias.
+Gretel es un anti-iniciador. Elige la app que de verdad quieres usar, configura Gretel como tu app de inicio y esa app se convierte en el lugar al que siempre vuelve tu dispositivo. Sin cuadrícula, sin feed, sin nada más compitiendo por tu atención.
 
-Usa Inicio una vez para volver a la app elegida. Usa Inicio dos veces rápidamente para abrir los ajustes. Puedes cambiar de app, elegir otra pantalla de inicio o desinstalar Gretel en cualquier momento.
+PARA DISPOSITIVOS DE UN SOLO PROPÓSITO
+Gretel fue creada para lectores electrónicos, donde una app de lectura como KOReader debería ser sencillamente el dispositivo. Funciona igual de bien en un teléfono o una tableta de repuesto que quieras convertir en una herramienta sin distracciones para leer, escribir, consultar o mostrar un panel.
 
-Gretel no es un modo quiosco. No usa administración del dispositivo, servicios de accesibilidad, superposiciones ni el modo de tareas bloqueadas.
+DISEÑADA PARA TINTA ELECTRÓNICA
+Alto contraste en blanco y negro, objetivos táctiles grandes, sin ondas y sin animaciones innecesarias. Elige tema automático, blanco o negro puro.
 
-No tiene cuentas, analíticas, anuncios ni acceso a la red. Tus ajustes permanecen en tu dispositivo.
+NUNCA TE QUEDAS ATRAPADO
+Pulsa Inicio una vez para volver a la app elegida. Pulsa Inicio dos veces rápido para abrir los ajustes de Gretel. El intervalo se puede configurar en 500, 800 o 1200 ms. Puedes cambiar de app, elegir otra pantalla de inicio o desinstalar Gretel cuando quieras.
+
+AJUSTES QUE TÚ CONTROLAS
+Gretel puede volver a abrir tu app después de reiniciar y traerla de vuelta cuando la app se cierra. Ambos comportamientos son ajustes que puedes desactivar.
+
+NO ES UN MODO QUIOSCO
+Gretel no usa administración del dispositivo, servicios de accesibilidad, superposiciones ni el modo de tareas bloqueadas. Es una app de inicio, no una jaula. Si necesitas impedir que alguien salga de una app, Gretel no es la herramienta adecuada.
+
+PRIVADA POR CONSTRUCCIÓN
+Sin cuentas, analíticas, anuncios, reportes de fallos ni permiso de red. Gretel no pide acceso a tu lista completa de apps. La app elegida y tus ajustes nunca salen del dispositivo.
+
+CÓDIGO ABIERTO
+Licencia Apache 2.0. Código, incidencias y compilaciones firmadas en https://github.com/abeant/gretel
+
+Funciona en Android 8.0 o superior, en cualquier dispositivo donde Android permita elegir la app de inicio. Español e inglés.

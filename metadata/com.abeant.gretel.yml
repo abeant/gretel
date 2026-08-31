@@ -1,19 +1,26 @@
-# F-Droid metadata stub. The GitHub repo is private as of v0.1; do not submit
-# this recipe until the source is public and a v* tag exists.
+# F-Droid build recipe for Gretel.
+#
+# This file is the copy we maintain. To publish, fork gitlab.com/fdroid/fdroiddata,
+# drop this file in at metadata/com.abeant.gretel.yml, then run:
+#
+#   fdroid lint com.abeant.gretel
+#   fdroid build -v -l com.abeant.gretel
+#
+# and open a merge request. Do not submit until the repository is public and the
+# referenced tag exists. Summary and description text come from the fastlane
+# metadata in this repository, so keep those files as the source of truth.
+
 Categories:
   - System
+  - Reading
 License: Apache-2.0
 AuthorName: abeant
 SourceCode: https://github.com/abeant/gretel
 IssueTracker: https://github.com/abeant/gretel/issues
+Changelog: https://github.com/abeant/gretel/releases
 
 AutoName: Gretel
-Name: Gretel
-Summary: Turn an Android device into a focused, single-app device.
-Description: |-
-    Gretel is an anti-launcher for Android. Choose the app you want to use,
-    make Gretel your home app, and that app becomes the place your device
-    always returns to. Gretel is private, designed for e-ink, and easy to undo.
+Summary: Anti-launcher: one chosen app replaces your home screen. E-ink ready.
 
 RepoType: git
 Repo: https://github.com/abeant/gretel.git
@@ -21,11 +28,12 @@ Repo: https://github.com/abeant/gretel.git
 Builds:
   - versionName: 0.1.0
     versionCode: 16
-    commit: UNKNOWN
+    commit: v0.1.0
+    subdir: app
     gradle:
       - yes
 
-AutoUpdateMode: None
+AutoUpdateMode: Version
 UpdateCheckMode: Tags
 CurrentVersion: 0.1.0
 CurrentVersionCode: 16

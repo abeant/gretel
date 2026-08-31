@@ -1,1 +1,1 @@
-Gretel
+Gretel: lanzador de una app

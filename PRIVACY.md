@@ -2,6 +2,9 @@
 
 Gretel collects nothing.
 
+The published version of this policy, which is the URL given to app stores, is at
+<https://abeant.github.io/gretel/privacy.html>. This file and that page say the same thing.
+
 - No accounts, analytics, ads, crash reporters, or telemetry.
 - No Play Services, Firebase, or Crashlytics.
 - No network permission and no network calls.

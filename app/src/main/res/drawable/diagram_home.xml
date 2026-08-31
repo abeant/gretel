@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Many apps collapsing into one. Nine large glyphs rather than twelve small ones:
+  at e-ink sizes the smaller set stayed legible and the larger set did not.
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:width="300dp"
@@ -7,109 +11,76 @@
     android:viewportHeight="280"
     tools:ignore="VectorRaster">
     <group android:translateX="86">
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M52.0,20.0 H228.0 A32,32 0 0 1 260.0,52.0 V228.0 A32,32 0 0 1 228.0,260.0 H52.0 A32,32 0 0 1 20.0,228.0 V52.0 A32,32 0 0 1 52.0,20.0 Z"
+            android:strokeWidth="5"
+            android:strokeColor="?android:attr/textColorPrimary" />
+
+        <group android:translateX="75" android:translateY="75">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:pathData="M-15,-10 a5,5 0 0 1 5,-5 h20 a5,5 0 0 1 5,5 v20 a5,5 0 0 1 -5,5 h-20 a5,5 0 0 1 -5,-5 z" />
+        </group>
+        <group android:translateX="140" android:translateY="75">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:pathData="M-11,-15 L15,0 L-11,15 z" />
+        </group>
+        <group android:translateX="205" android:translateY="75">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:pathData="M0,-15 a15,15 0 1 1 0,30 a15,15 0 1 1 0,-30 z" />
+        </group>
+
+        <group android:translateX="75" android:translateY="139">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:pathData="M-12,-14 h24 a4,4 0 0 1 4,4 v14 a4,4 0 0 1 -4,4 h-11 l-9,9 v-9 h-4 a4,4 0 0 1 -4,-4 v-14 a4,4 0 0 1 4,-4 z" />
+        </group>
+        <group android:translateX="140" android:translateY="140">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:pathData="M-17,-8 h8 l3,-5 h12 l3,5 h8 a3,3 0 0 1 3,3 v16 a3,3 0 0 1 -3,3 h-34 a3,3 0 0 1 -3,-3 v-16 a3,3 0 0 1 3,-3 z M0,3 a7,7 0 1 0 0.1,0 z" />
+        </group>
+        <group android:translateX="205" android:translateY="140">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:fillType="evenOdd"
+                android:pathData="M-17,-12 h34 v24 h-34 z M-17,-12 L0,4 L17,-12 z" />
+        </group>
+
+        <group android:translateX="75" android:translateY="205">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:pathData="M-11,-15 h22 v30 l-11,-10 l-11,10 z" />
+        </group>
+        <group android:translateX="140" android:translateY="205">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:pathData="M0,-16 a8,8 0 1 1 0,16 a8,8 0 1 1 0,-16 z M-14,5 a14,13 0 0 1 28,0 v11 h-28 z" />
+        </group>
+        <group android:translateX="205" android:translateY="206">
+            <path
+                android:fillColor="?android:attr/textColorPrimary"
+                android:pathData="M0,14 C-18,2 -16,-10 -8,-13 C-3,-15 0,-10 0,-7 C0,-10 3,-15 8,-13 C16,-10 18,2 0,14 z" />
+        </group>
+    </group>
+
     <path
         android:fillColor="#00000000"
-        android:pathData="M52.0,20.0 H228.0 A32,32 0 0 1 260.0,52.0 V228.0 A32,32 0 0 1 228.0,260.0 H52.0 A32,32 0 0 1 20.0,228.0 V52.0 A32,32 0 0 1 52.0,20.0 Z"
-        android:strokeWidth="5"
-        android:strokeColor="?android:attr/textColorPrimary" />
-    <group
-        android:translateX="74.7"
-        android:translateY="66.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-11,-11 h16 a6,6 0 0 1 6,6 v16 a6,6 0 0 1 -6,6 h-16 a6,6 0 0 1 -6,-6 v-16 a6,6 0 0 1 6,-6 z" />
-    </group>
-    <group
-        android:translateX="140.0"
-        android:translateY="66.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-8,-12 L12,0 L-8,12 z" />
-    </group>
-    <group
-        android:translateX="205.3"
-        android:translateY="66.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M0,-12 a12,12 0 1 1 0,24 a12,12 0 1 1 0,-24 z" />
-    </group>
-    <group
-        android:translateX="74.7"
-        android:translateY="115.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-12,-8 h20 a4,4 0 0 1 4,4 v10 a4,4 0 0 1 -4,4 h-8 l-6,6 v-6 h-6 a4,4 0 0 1 -4,-4 v-10 a4,4 0 0 1 4,-4 z" />
-    </group>
-    <group
-        android:translateX="140.0"
-        android:translateY="115.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-3,-12 h6 v4 h4 v-4 h6 v6 h-4 v4 h4 v6 h-4 v4 h-6 v-4 h-4 v4 h-6 v-6 h4 v-4 h-4 v-6 h4 v-4 z M0,-5 a5,5 0 1 0 0.1,0 z" />
-    </group>
-    <group
-        android:translateX="205.3"
-        android:translateY="115.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-12,-6 h8 l3,-4 h13 v18 h-24 z" />
-    </group>
-    <group
-        android:translateX="74.7"
-        android:translateY="164.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-12,-6 h6 l2,-4 h8 l2,4 h6 v16 h-24 z M0,2 a5,5 0 1 0 0.1,0 z" />
-    </group>
-    <group
-        android:translateX="140.0"
-        android:translateY="164.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M6,-12 v16 a5,5 0 1 1 -4,0 v-12 h8 z" />
-    </group>
-    <group
-        android:translateX="205.3"
-        android:translateY="164.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-12,-8 h24 v16 h-24 z M-12,-8 L0,4 L12,-8" />
-    </group>
-    <group
-        android:translateX="74.7"
-        android:translateY="213.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M0,-12 a6,6 0 1 1 0,12 a6,6 0 1 1 0,-12 z M-11,4 a11,10 0 0 1 22,0 v8 h-22 z" />
-    </group>
-    <group
-        android:translateX="140.0"
-        android:translateY="213.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-12,-10 h24 v20 h-24 z M-10,8 L-2,-2 L3,4 L7,-1 L12,8 z" />
-    </group>
-    <group
-        android:translateX="205.3"
-        android:translateY="213.5">
-        <path
-            android:fillColor="?android:attr/textColorPrimary"
-            android:pathData="M-2,-12 h12 v24 h-12 a4,4 0 0 1 -4,-4 v-16 a4,4 0 0 1 4,-4 z M-2,-12 v24" />
-    </group>
-    </group>
-    <path
-        android:fillColor="#00000000"
-        android:pathData="M346.0,66.5 L518.0,140.0 M346.0,91.0 L518.0,140.0 M346.0,115.5 L518.0,140.0 M346.0,140.0 L518.0,140.0 M346.0,164.5 L518.0,140.0 M346.0,189.0 L518.0,140.0 M346.0,213.5 L518.0,140.0"
-        android:strokeWidth="1.8"
+        android:pathData="M346.0,75.0 L516.0,140.0 M346.0,107.5 L516.0,140.0 M346.0,140.0 L516.0,140.0 M346.0,172.5 L516.0,140.0 M346.0,205.0 L516.0,140.0"
+        android:strokeWidth="2.4"
         android:strokeColor="?android:attr/textColorPrimary"
         android:strokeLineCap="round" />
     <path
         android:fillColor="?android:attr/textColorPrimary"
-        android:pathData="M518,126 L542,140 L518,154 Z" />
+        android:pathData="M514,126 L540,140 L514,154 Z" />
+
     <group android:translateX="-86">
-    <path
-        android:fillColor="?android:attr/textColorPrimary"
-        android:fillType="evenOdd"
-        android:pathData="M672.0,20.0 H848.0 A32,32 0 0 1 880.0,52.0 V228.0 A32,32 0 0 1 848.0,260.0 H672.0 A32,32 0 0 1 640.0,228.0 V52.0 A32,32 0 0 1 672.0,20.0 Z M 736.55,206.77 H 701.39 C 699.89,206.77 698.67,205.55 698.67,204.04 V 75.96 C 698.67,74.45 699.89,73.23 701.39,73.23 H 818.61 C 820.11,73.23 821.33,74.45 821.33,75.96 V 103.39 C 821.33,104.90 820.11,106.12 818.61,106.12 H 747.23 C 743.05,106.12 738.81,106.12 739.27,116.04 V 204.04 C 739.27,205.55 738.05,206.77 736.55,206.77 Z M 818.61,131.28 H 756.71 C 772.04,137.63 779.59,135.56 779.01,147.29 V 204.04 C 779.01,205.55 780.23,206.77 781.74,206.77 H 818.61 C 820.11,206.77 821.33,205.55 821.33,204.04 V 134.00 C 821.33,132.50 820.11,131.28 818.61,131.28 Z" />
+        <path
+            android:fillColor="?android:attr/textColorPrimary"
+            android:fillType="evenOdd"
+            android:pathData="M672.0,20.0 H848.0 A32,32 0 0 1 880.0,52.0 V228.0 A32,32 0 0 1 848.0,260.0 H672.0 A32,32 0 0 1 640.0,228.0 V52.0 A32,32 0 0 1 672.0,20.0 Z M 736.55,206.77 H 701.39 C 699.89,206.77 698.67,205.55 698.67,204.04 V 75.96 C 698.67,74.45 699.89,73.23 701.39,73.23 H 818.61 C 820.11,73.23 821.33,74.45 821.33,75.96 V 103.39 C 821.33,104.90 820.11,106.12 818.61,106.12 H 747.23 C 743.05,106.12 738.81,106.12 739.27,116.04 V 204.04 C 739.27,205.55 738.05,206.77 736.55,206.77 Z M 818.61,131.28 H 756.71 C 772.04,137.63 779.59,135.56 779.01,147.29 V 204.04 C 779.01,205.55 780.23,206.77 781.74,206.77 H 818.61 C 820.11,206.77 821.33,205.55 821.33,204.04 V 134.00 C 821.33,132.50 820.11,131.28 818.61,131.28 Z" />
     </group>
 </vector>
