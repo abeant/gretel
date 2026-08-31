@@ -1,0 +1,1 @@
+Initial release. Choose one app to replace the usual Android home screen, with an e-ink-first interface and a quick path back to settings.

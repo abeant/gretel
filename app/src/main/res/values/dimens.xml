@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tap_min">48dp</dimen>
+    <dimen name="settings_row">48dp</dimen>
+    <dimen name="settings_section_gap">10dp</dimen>
+    <dimen name="text_min">16sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="text_title">24sp</dimen>
+    <dimen name="text_label">12sp</dimen>
+    <dimen name="page_padding">16dp</dimen>
+    <dimen name="stroke">2dp</dimen>
+    <dimen name="stroke_selected">4dp</dimen>
+    <dimen name="hairline">1dp</dimen>
+    <dimen name="text_column">480dp</dimen>
+    <dimen name="step_block">8dp</dimen>
+</resources>

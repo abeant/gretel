@@ -1,0 +1,9 @@
+Gretel es un iniciador Android minimalista: un anti-iniciador centrado en una app en lugar de una cuadrícula. Elige la app que quieres usar, configura Gretel como tu app de inicio y esa app se convierte en el lugar al que siempre vuelve tu dispositivo.
+
+Está diseñada para lectores electrónicos, teléfonos de repuesto y tabletas que quieras convertir en herramientas enfocadas. Úsala para que KOReader u otra app de lectura sea la experiencia principal, o para crear un dispositivo sin distracciones para leer, escribir, consultar información o mostrar un panel. La interfaz de alto contraste está pensada para tinta electrónica, con objetivos táctiles grandes y sin animaciones innecesarias.
+
+Usa Inicio una vez para volver a la app elegida. Usa Inicio dos veces rápidamente para abrir los ajustes. Puedes cambiar de app, elegir otra pantalla de inicio o desinstalar Gretel en cualquier momento.
+
+Gretel no es un modo quiosco. No usa administración del dispositivo, servicios de accesibilidad, superposiciones ni el modo de tareas bloqueadas.
+
+No tiene cuentas, analíticas, anuncios ni acceso a la red. Tus ajustes permanecen en tu dispositivo.

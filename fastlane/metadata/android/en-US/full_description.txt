@@ -1,0 +1,9 @@
+Gretel is a minimal Android launcher and an anti-launcher built around one app instead of an app grid. Choose the app you want to use, make Gretel your home app, and that app becomes the place your device always returns to.
+
+It is designed for e-readers, spare phones, and tablets that you want to turn into focused tools. Use it to make KOReader or another reading app the default experience, or to create a distraction-free writing, reference, or dashboard device. The high-contrast interface is built for e-ink, with large targets and no unnecessary animation.
+
+Use Home once to return to your chosen app. Use Home twice quickly to open settings. You can change the app, choose another home screen, or uninstall Gretel at any time.
+
+Gretel is intentionally not a kiosk. It does not use Device Admin, Accessibility, overlays, or lock task mode.
+
+No accounts, analytics, ads, or network access. Your settings stay on your device.

@@ -1,0 +1,1 @@
+Un iniciador Android minimalista que mantiene una app en primer plano.

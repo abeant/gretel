@@ -1,0 +1,1 @@
+Versión inicial. Elige una app para reemplazar la pantalla de inicio habitual de Android, con una interfaz diseñada para tinta electrónica y una forma rápida de volver a los ajustes.

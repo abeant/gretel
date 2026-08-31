@@ -1,0 +1,1 @@
+A minimal Android launcher that keeps one chosen app in focus.

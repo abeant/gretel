@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/row_outline"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/tap_min"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/icon_frame"
+        android:contentDescription="@null"
+        android:importantForAccessibility="no"
+        android:padding="3dp" />
+
+    <TextView
+        android:id="@+id/appLabel"
+        style="@style/Text.Gretel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:textColor="@color/row_text"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/suggestedBadge"
+        style="@style/Text.Gretel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/suggested_badge"
+        android:textColor="@color/row_text"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/appPackage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+</LinearLayout>

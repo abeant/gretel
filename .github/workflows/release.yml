@@ -1,0 +1,104 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    name: signed APK and AAB
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: JDK 17
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Platform 36
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Validate release
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEYSTORE_ALIAS: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          for name in ANDROID_KEYSTORE_BASE64 ANDROID_KEYSTORE_PASSWORD ANDROID_KEYSTORE_ALIAS ANDROID_KEY_PASSWORD; do
+            if [ -z "${!name:-}" ]; then
+              echo "Missing required Actions secret: ${name}" >&2
+              exit 1
+            fi
+          done
+
+          VERSION_NAME=$(sed -n 's/.*versionName = "\([^"]*\)".*/\1/p' app/build.gradle.kts)
+          if [ "${GITHUB_EVENT_NAME}" = "push" ] && [ "v${VERSION_NAME}" != "${GITHUB_REF_NAME}" ]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match versionName ${VERSION_NAME}" >&2
+            exit 1
+          fi
+          echo "RELEASE_VERSION=v${VERSION_NAME}" >> "${GITHUB_ENV}"
+
+          printf '%s' "${ANDROID_KEYSTORE_BASE64}" | base64 --decode > "${RUNNER_TEMP}/gretel.jks"
+
+      - name: Test and build signed release
+        env:
+          ANDROID_KEYSTORE_PATH: ${{ runner.temp }}/gretel.jks
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEYSTORE_ALIAS: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: ./gradlew :app:lintRelease :app:testReleaseUnitTest :app:assembleRelease :app:bundleRelease --no-daemon --stacktrace
+
+      - name: Verify APK signature
+        run: |
+          "${ANDROID_HOME}/build-tools/36.0.0/apksigner" verify --verbose --print-certs app/build/outputs/apk/release/app-release.apk
+
+      - name: Package release
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cp app/build/outputs/apk/release/app-release.apk dist/gretel.apk
+          cp app/build/outputs/bundle/release/app-release.aab dist/gretel.aab
+          cd dist
+          sha256sum gretel.apk gretel.aab > SHA256SUMS
+          cat SHA256SUMS
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: gretel-${{ env.RELEASE_VERSION }}
+          path: dist/
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+            gh release upload "${GITHUB_REF_NAME}" \
+              dist/gretel.apk \
+              dist/gretel.aab \
+              dist/SHA256SUMS \
+              --clobber
+          else
+            gh release create "${GITHUB_REF_NAME}" \
+              dist/gretel.apk \
+              dist/gretel.aab \
+              dist/SHA256SUMS \
+              --verify-tag \
+              --generate-notes \
+              --title "Gretel ${GITHUB_REF_NAME#v}"
+          fi

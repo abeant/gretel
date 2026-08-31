@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/page_padding">
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_label" />
+
+    <include
+        android:id="@+id/stepRow"
+        layout="@layout/include_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.Gretel.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/set_home_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <TextView
+            android:id="@+id/body"
+            style="@style/Text.Gretel.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:maxWidth="@dimen/text_column"
+            android:text="@string/set_home_body" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/homeSettingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/open_home_settings"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/skipButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/skip_for_now" />
+
+    <Button
+        android:id="@+id/setHomeButton"
+        style="@style/Widget.Gretel.Button.Filled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/set_as_home" />
+</LinearLayout>

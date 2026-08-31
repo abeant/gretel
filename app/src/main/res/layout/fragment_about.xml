@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/page_padding">
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_label" />
+
+    <TextView
+        style="@style/Text.Gretel.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/about_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/version"
+                style="@style/Text.Gretel.Mono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_version" />
+
+            <TextView
+                android:id="@+id/sourceRow"
+                style="@style/Text.Gretel.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/focus_outline"
+                android:clickable="true"
+                android:focusable="true"
+                android:minHeight="@dimen/tap_min"
+                android:gravity="center_vertical"
+                android:text="@string/source_repo" />
+
+            <TextView
+                style="@style/Text.Gretel.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:maxWidth="@dimen/text_column"
+                android:text="@string/about_identity" />
+
+            <TextView
+                style="@style/Text.Gretel.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:maxWidth="@dimen/text_column"
+                android:text="@string/about_privacy" />
+
+            <TextView
+                style="@style/Text.Gretel.Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/about_license_heading" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/hairline"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/hairline" />
+
+            <TextView
+                android:id="@+id/licenseBody"
+                style="@style/Text.Gretel.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:maxWidth="@dimen/text_column"
+                android:text="@string/about_license_fallback" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

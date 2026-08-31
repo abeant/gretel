@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- E-ink: 100% contrast, no ripples, no motion. Geometric grotesque = sans-serif. -->
+    <style name="Theme.Gretel" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/gretel_white</item>
+        <item name="android:colorBackground">@color/gretel_white</item>
+        <item name="android:statusBarColor">@color/gretel_white</item>
+        <item name="android:navigationBarColor">@color/gretel_white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:textColor">@color/gretel_black</item>
+        <item name="android:textColorPrimary">@color/gretel_black</item>
+        <item name="android:textColorSecondary">@color/gretel_black</item>
+        <item name="android:textColorHint">@color/gretel_black</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/text_min</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowContentTransitions">false</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:colorControlHighlight">@android:color/transparent</item>
+        <item name="colorPrimary">@color/gretel_black</item>
+        <item name="colorPrimaryDark">@color/gretel_black</item>
+        <item name="colorAccent">@color/gretel_black</item>
+        <item name="android:buttonStyle">@style/Widget.Gretel.Button</item>
+        <item name="buttonStyle">@style/Widget.Gretel.Button</item>
+    </style>
+
+    <style name="Theme.Gretel.Black">
+        <item name="android:windowBackground">@color/gretel_black</item>
+        <item name="android:colorBackground">@color/gretel_black</item>
+        <item name="android:statusBarColor">@color/gretel_black</item>
+        <item name="android:navigationBarColor">@color/gretel_black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColor">@color/gretel_white</item>
+        <item name="android:textColorPrimary">@color/gretel_white</item>
+        <item name="android:textColorSecondary">@color/gretel_white</item>
+        <item name="android:textColorHint">@color/gretel_white</item>
+        <item name="colorPrimary">@color/gretel_white</item>
+        <item name="colorPrimaryDark">@color/gretel_white</item>
+        <item name="colorAccent">@color/gretel_white</item>
+        <item name="android:buttonStyle">@style/Widget.Gretel.Button.Black</item>
+        <item name="buttonStyle">@style/Widget.Gretel.Button.Black</item>
+    </style>
+
+    <style name="Theme.Gretel.Home" parent="Theme.Gretel">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="Widget.Gretel.Button" parent="Widget.AppCompat.Button">
+        <item name="android:minHeight">@dimen/tap_min</item>
+        <item name="android:minWidth">@dimen/tap_min</item>
+        <item name="android:textSize">@dimen/text_min</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:background">@drawable/btn_outline</item>
+        <item name="android:textColor">@color/btn_text</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+
+    <style name="Widget.Gretel.Button.Black" parent="Widget.Gretel.Button">
+        <item name="android:background">@drawable/btn_outline</item>
+        <item name="android:textColor">@color/btn_text</item>
+    </style>
+
+    <style name="Widget.Gretel.Button.Filled" parent="Widget.Gretel.Button">
+        <item name="android:background">@drawable/btn_filled</item>
+        <item name="android:textColor">@color/btn_filled_text</item>
+    </style>
+
+    <style name="Widget.Gretel.Button.Chip" parent="Widget.Gretel.Button">
+        <item name="android:minHeight">@dimen/tap_min</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Text.Gretel" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="Text.Gretel.Body" parent="Text.Gretel">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <style name="Text.Gretel.Title" parent="Text.Gretel">
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Gretel.Label" parent="Text.Gretel">
+        <item name="android:textSize">@dimen/text_label</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.16</item>
+    </style>
+
+    <style name="Text.Gretel.Mono" parent="Text.Gretel">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textSize">@dimen/text_body</item>
+    </style>
+
+</resources>
