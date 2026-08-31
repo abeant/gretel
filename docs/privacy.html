@@ -16,7 +16,9 @@
   }
   main { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
   a { color: #000; text-underline-offset: 3px; }
-  h1 { font-size: 15px; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 40px; font-weight: 700; }
+  h1.lockup { margin: 0 0 40px; }
+  h1.lockup a { text-decoration: none; }
+  h1.lockup img { display: block; width: 180px; height: auto; }
   h2 { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; margin: 48px 0 14px; font-weight: 700; }
   .lede { font-size: 28px; line-height: 1.25; font-weight: 700; letter-spacing: -.02em; margin: 0 0 28px; }
   .rule { border: 0; border-top: 2px solid currentColor; margin: 48px 0; }
@@ -33,7 +35,14 @@
 <body>
 <main>
 
-  <h1><a href="./">Gretel</a></h1>
+  <h1 class="lockup">
+    <a href="./">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/gretel-lockup-dark.svg">
+        <img src="assets/gretel-lockup.svg" alt="GRETEL">
+      </picture>
+    </a>
+  </h1>
 
   <p class="lede">Gretel collects nothing.</p>
 
