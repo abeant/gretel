@@ -1,9 +1,26 @@
-Gretel is a minimal Android launcher and an anti-launcher built around one app instead of an app grid. Choose the app you want to use, make Gretel your home app, and that app becomes the place your device always returns to.
+Every Android launcher hands you a grid of apps and asks you to choose again, every time you press Home. Gretel asks once.
 
-It is designed for e-readers, spare phones, and tablets that you want to turn into focused tools. Use it to make KOReader or another reading app the default experience, or to create a distraction-free writing, reference, or dashboard device. The high-contrast interface is built for e-ink, with large targets and no unnecessary animation.
+Gretel is an anti-launcher. Pick the app you actually want to use, make Gretel your home app, and that app becomes the place your device always returns to. No grid, no feed, nothing else competing for your attention.
 
-Use Home once to return to your chosen app. Use Home twice quickly to open settings. You can change the app, choose another home screen, or uninstall Gretel at any time.
+MADE FOR ONE-PURPOSE DEVICES
+Gretel was built for e-readers, where a reading app such as KOReader should simply be the device. It works just as well on a spare phone or tablet you want to turn into a distraction-free reading, writing, reference, or dashboard tool.
 
-Gretel is intentionally not a kiosk. It does not use Device Admin, Accessibility, overlays, or lock task mode.
+BUILT FOR E-INK
+High-contrast black and white, large touch targets, no ripples, and no unnecessary animation. Choose an automatic, white, or true black theme.
 
-No accounts, analytics, ads, or network access. Your settings stay on your device.
+NEVER STUCK
+Press Home once to return to your chosen app. Press Home twice quickly to open Gretel's settings. The double-Home timing can be set to 500, 800, or 1200 ms. You can change your app, pick another home screen in Android settings, or uninstall Gretel at any time.
+
+SWITCHES YOU CONTROL
+Gretel can reopen your app after a restart, and bring it back when the app exits. Both behaviors are settings you can turn off.
+
+NOT A KIOSK
+Gretel does not use Device Admin, Accessibility services, screen overlays, or lock task mode. It is a home app, not a cage. If you need to stop someone from leaving an app, Gretel is the wrong tool.
+
+PRIVATE BY CONSTRUCTION
+No accounts, analytics, ads, crash reporters, or network permission. Gretel does not request access to your full app list. Your chosen app and settings never leave the device.
+
+OPEN SOURCE
+Apache License 2.0. Source, issues, and signed builds are at https://github.com/abeant/gretel
+
+Works on Android 8.0 and newer, on any device where Android lets you choose the home app. English and Spanish.

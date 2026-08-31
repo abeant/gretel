@@ -1,1 +1,1 @@
-A minimal Android launcher that keeps one chosen app in focus.
+Anti-launcher: one chosen app replaces your home screen. E-ink ready.

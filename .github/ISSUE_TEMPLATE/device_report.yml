@@ -1,0 +1,52 @@
+name: Device report
+description: Tell us whether Gretel works on your device, so others can find out before they install.
+title: "Device: "
+labels: ["device report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gretel needs a device where Android lets you choose the home app. Some
+        manufacturers move or remove that setting. Reports here become the
+        compatibility list, so both working and non-working devices are useful.
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      placeholder: BOOX Nova Air
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version
+      placeholder: Android 10
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Does it work?
+      options:
+        - Works, no problems
+        - Works, with quirks
+        - Cannot set Gretel as the home app
+        - Does not work
+    validations:
+      required: true
+  - type: dropdown
+    id: home-setting
+    attributes:
+      label: Where did you find the home app setting?
+      options:
+        - Gretel's own prompt worked
+        - Settings, Apps, Default apps, Home app
+        - Somewhere else in the manufacturer's settings
+        - I could not find it
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Screen refresh behavior, quirks, or the path you used to reach the setting.

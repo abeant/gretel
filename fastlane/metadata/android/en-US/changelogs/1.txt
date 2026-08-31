@@ -1,1 +1,0 @@
-Initial release (0.1.0). HOME opens one assigned app. Hatch is double-Home. KOReader preferred if installed. Apache-2.0.

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the FAQ first
+    url: https://github.com/abeant/gretel#questions
+    about: Locking, getting back to settings, battery, Kindle support, and undoing Gretel are answered in the README.
+  - name: Website
+    url: https://abeant.github.io/gretel/
+    about: Screenshots, install instructions, and the privacy policy.

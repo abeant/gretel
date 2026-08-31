@@ -26,7 +26,8 @@ class AboutFragment : Fragment() {
             BuildConfig.VERSION_NAME,
             BuildConfig.VERSION_CODE,
         )
-        view.licenseBody.setText(R.string.about_license_fallback)
+        view.licenseBody.text = readBundledLicense()
+            ?: getString(R.string.about_license_fallback)
         AccessibilitySemantics.asButton(view.sourceRow)
         view.sourceRow.setOnClickListener {
             val uri = getString(R.string.source_repo_url).toUri()
@@ -42,8 +43,23 @@ class AboutFragment : Fragment() {
         return view.root
     }
 
+    /**
+     * Apache 2.0 section 4(a) asks that recipients get a copy of the licence.
+     * E-readers often have no browser, so the full text ships in assets and the
+     * link to the repository is a convenience rather than the only copy.
+     */
+    private fun readBundledLicense(): String? = try {
+        requireContext().assets.open(LICENSE_ASSET).bufferedReader().use { it.readText() }
+    } catch (_: java.io.IOException) {
+        null
+    }
+
     override fun onDestroyView() {
         binding = null
         super.onDestroyView()
+    }
+
+    private companion object {
+        const val LICENSE_ASSET = "LICENSE.txt"
     }
 }

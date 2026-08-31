@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gretel: the anti-launcher for Android</title>
+<meta name="description" content="Gretel is a minimal open-source Android launcher that replaces your home screen with one app you choose. Built for e-ink readers, KOReader, and focused devices. No accounts, ads, or network access.">
+<link rel="canonical" href="https://abeant.github.io/gretel/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gretel: the anti-launcher for Android">
+<meta property="og:description" content="Your home screen is one app. A minimal, private, open-source Android launcher built for e-ink readers and focused devices.">
+<meta property="og:url" content="https://abeant.github.io/gretel/">
+<meta property="og:image" content="https://abeant.github.io/gretel/assets/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icon.png">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #000; background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 64px 24px 96px; }
+  a { color: #000; text-underline-offset: 3px; }
+  h1 { font-size: 15px; letter-spacing: .16em; text-transform: uppercase; margin: 0 0 40px; font-weight: 700; }
+  h2 { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; margin: 56px 0 16px; font-weight: 700; }
+  .lede { font-size: 30px; line-height: 1.25; font-weight: 700; letter-spacing: -.02em; margin: 0 0 24px; }
+  .sub { font-size: 19px; margin: 0 0 36px; }
+  .rule { border: 0; border-top: 2px solid currentColor; margin: 48px 0; }
+  .cta {
+    display: inline-block; padding: 14px 26px; background: #000; color: #fff;
+    text-decoration: none; font-weight: 700; letter-spacing: .02em; border: 2px solid #000;
+  }
+  .cta.ghost { background: transparent; color: #000; margin-left: 8px; }
+  .diagram { margin: 44px 0; text-align: center; }
+  .diagram img { width: 100%; max-width: 560px; }
+  @media (prefers-color-scheme: dark) { .diagram img { filter: invert(1); } }
+  .shots { display: flex; gap: 16px; margin: 40px 0 0; }
+  .shots img { width: 50%; border: 2px solid currentColor; display: block; }
+  ul { padding-left: 20px; }
+  li { margin: 10px 0; }
+  li b { font-weight: 700; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { border-bottom: 1px solid currentColor; padding: 10px 8px; text-align: left; }
+  th { font-weight: 700; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+  footer { margin-top: 72px; font-size: 15px; }
+  .note { border-left: 2px solid currentColor; padding-left: 16px; margin: 28px 0; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #fff; background: #000; }
+    a { color: #fff; }
+    .cta { background: #fff; color: #000; border-color: #fff; }
+    .cta.ghost { background: transparent; color: #fff; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Gretel</h1>
+
+  <p class="lede">The anti-launcher.<br>Your home screen is one app.</p>
+
+  <p class="sub">Every Android launcher hands you a grid of apps and asks you to choose again, every time you press Home. Gretel asks once.</p>
+
+  <p class="diagram"><img src="assets/diagram-grid-to-one.svg" alt="A grid of app icons collapsing into the single Gretel app"></p>
+
+  <p>
+    <a class="cta" href="https://github.com/abeant/gretel/releases/latest">Download the APK</a>
+    <a class="cta ghost" href="https://github.com/abeant/gretel">Source on GitHub</a>
+  </p>
+
+  <div class="shots">
+    <img src="assets/welcome.png" alt="Gretel welcome screen on a BOOX Nova Air e-reader">
+    <img src="assets/choose-app.png" alt="Choosing an installed app in Gretel">
+  </div>
+
+  <hr class="rule">
+
+  <h2>What it does</h2>
+  <ul>
+    <li><b>One chosen app replaces the home screen.</b> Your Home button or gesture opens it, every time.</li>
+    <li><b>Your app stays in front.</b> Gretel can bring it back after a restart or when the app exits. Both behaviors are optional.</li>
+    <li><b>Settings are always within reach.</b> Home twice quickly opens Gretel instead of your chosen app.</li>
+    <li><b>Designed for e-ink.</b> High contrast, large targets, no ripples, no unnecessary animation.</li>
+    <li><b>Private by construction.</b> No account, ads, analytics, network permission, or broad package visibility.</li>
+    <li><b>Easy to undo.</b> Choose another home app in Android settings, or uninstall Gretel like any other app.</li>
+  </ul>
+
+  <h2>Made for one-purpose devices</h2>
+  <p>Gretel was built for e-readers, where a reading app such as KOReader should simply be the device. It works just as well on a spare phone or tablet you want to turn into a distraction-free reading, writing, reference, or dashboard tool.</p>
+
+  <div class="note">
+    <p>Gretel is not a kiosk or parental-control app. It is intentionally reversible and does not use Device Admin, Accessibility, overlays, or lock task mode. If you need to stop someone from leaving an app, Gretel is the wrong tool.</p>
+  </div>
+
+  <h2>Compatibility</h2>
+  <table>
+    <tr><th>Android</th><td>8.0 Oreo or newer</td></tr>
+    <tr><th>Architectures</th><td>Any. Gretel contains no native code.</td></tr>
+    <tr><th>Tested on</th><td>BOOX Nova Air, Android 10</td></tr>
+    <tr><th>Package</th><td><code>com.abeant.gretel</code></td></tr>
+    <tr><th>Licence</th><td>Apache 2.0</td></tr>
+  </table>
+
+  <h2>Install</h2>
+  <ol>
+    <li>Download <code>gretel.apk</code> from <a href="https://github.com/abeant/gretel/releases/latest">Releases</a> and open it on your device. If Android asks, allow your browser or file manager to install unknown apps.</li>
+    <li>Open Gretel and choose the app you want to use.</li>
+    <li>Follow the prompt to set Gretel as your home app.</li>
+  </ol>
+  <p>Home once returns you to your chosen app. Home twice quickly opens Gretel's settings.</p>
+
+  <hr class="rule">
+
+  <footer>
+    <p>
+      <a href="https://github.com/abeant/gretel">GitHub</a> &middot;
+      <a href="privacy.html">Privacy</a> &middot;
+      <a href="https://github.com/abeant/gretel/issues">Report an issue</a> &middot;
+      <a href="https://github.com/abeant/gretel/blob/main/LICENSE">Licence</a>
+    </p>
+    <p>This page loads no fonts, scripts, trackers, or third-party resources. That is the point.</p>
+  </footer>
+
+</main>
+</body>
+</html>

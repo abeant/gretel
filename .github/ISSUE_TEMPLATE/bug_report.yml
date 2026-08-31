@@ -1,0 +1,46 @@
+name: Bug report
+description: Something in Gretel does not work the way it should.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: Manufacturer and model.
+      placeholder: BOOX Nova Air
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version
+      placeholder: Android 10
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Gretel version
+      description: Shown on the About screen inside Gretel.
+      placeholder: 0.1.0 (16)
+    validations:
+      required: true
+  - type: input
+    id: chosen-app
+    attributes:
+      label: Chosen app
+      description: The app you assigned in Gretel, if the problem involves it.
+      placeholder: KOReader
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logcat, if you have it
+      description: Output of `adb logcat` around the time of the problem. Optional.
+      render: text
