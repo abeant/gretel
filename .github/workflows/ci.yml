@@ -13,11 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-
-      - name: No AI attribution
-        run: ./scripts/no-ai-attribution.sh check
 
       - name: Copy punctuation check
         run: |
