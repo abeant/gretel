@@ -125,9 +125,16 @@ It is not a lock. Locks invite you to test them. Gretel is a default, and defaul
 
 ## Pairs with Hansel
 
-Gretel makes KOReader the first thing the device shows. [Hansel](https://github.com/abeant/hansel.koplugin) makes your Grimmory library the first thing KOReader shows. Together an e-reader boots straight into your book covers.
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/hansel-x-gretel-dark.svg">
+    <img src=".github/assets/hansel-x-gretel.svg" width="640" alt="Hansel × Gretel: the Hansel lockup, a cross, and the Gretel lockup">
+  </picture>
+</p>
 
-They're independent. Gretel works with any app, with or without Hansel.
+Gretel makes KOReader the first thing the device shows. [Hansel](https://github.com/abeant/hansel.koplugin) makes your Grimmory library the first thing KOReader shows. Put them together on an Android e-reader and the device boots straight into your book covers: press Home and you're back at the library, not at an app grid.
+
+They're independent. Hansel is a KOReader plugin that runs on any KOReader device. Gretel works with any app, reading or not.
 
 ## Compatibility
 
