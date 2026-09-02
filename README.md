@@ -66,33 +66,54 @@ Gretel is also headed to F-Droid. Watch [Releases](https://github.com/abeant/gre
 
 Gretel was built for e-readers, where a reading app such as KOReader should simply *be* the device. The same trick turns any spare phone or tablet into a single-purpose tool. Pick the app, install Gretel, done.
 
+### Read and write
+
 | Use case | The device becomes | Start with (F-Droid) |
 |---|---|---|
-| **Read and write** | | |
 | E-reader | A book. Home returns to the reader, every time. | [KOReader](https://f-droid.org/packages/org.koreader.launcher.fdroid/), [Librera](https://f-droid.org/packages/com.foobnix.pro.pdf.reader/) |
 | Read-later device | Your saved articles and feeds, without a feed. | [wallabag](https://f-droid.org/packages/fr.gaulupeau.apps.InThePoche/), [Feeder](https://f-droid.org/packages/com.nononsenseapps.feeder/) |
 | Writing deck | A tablet and a Bluetooth keyboard become a typewriter. | [Markor](https://f-droid.org/packages/net.gsantner.markor/) |
 | Paper notebook | An e-ink tablet that opens straight to a blank page. | [Saber](https://f-droid.org/packages/com.adilhanney.saber/) |
 | Scripture | A device that opens to the text, nothing else. | [AndBible](https://f-droid.org/packages/net.bible.android.activity/) |
-| **Focus and wellbeing** | | |
+
+### Focus and wellbeing
+
+| Use case | The device becomes | Start with (F-Droid) |
+|---|---|---|
 | Study cards | An old tablet becomes a deck of flashcards. | [AnkiDroid](https://f-droid.org/packages/com.ichi2.anki/) |
 | Sleep phone | The bedroom phone is an alarm clock or white noise, and cannot be anything else. | [Fossify Clock](https://f-droid.org/packages/org.fossify.clock/), [Noice](https://f-droid.org/packages/com.github.ashutoshgngwr.noice/) |
 | Habit tracker | One screen, one question: did you do it today? | [Loop Habit Tracker](https://f-droid.org/packages/org.isoron.uhabits/) |
 | Dumbphone | A spare phone that only makes calls or only sends texts. | [Fossify Phone](https://f-droid.org/packages/org.fossify.phone/), [Fossify Messages](https://f-droid.org/packages/org.fossify.messages/) |
-| **Family and accessibility** | | |
+
+### Family and accessibility
+
+| Use case | The device becomes | Start with (F-Droid) |
+|---|---|---|
 | Grandparent's phone | Opens to video calls. If they get lost, Home brings the calls back. | [Jitsi Meet](https://f-droid.org/packages/org.jitsi.meet/), [Linphone](https://f-droid.org/packages/org.linphone/) |
 | Kid's audiobook player | An old phone with stories and no store. | [Voice](https://f-droid.org/packages/de.ph1b.audiobook/) |
-| **Around the house** | | |
+
+### Around the house
+
+| Use case | The device becomes | Start with (F-Droid) |
+|---|---|---|
 | Wall dashboard | A Home Assistant tablet without kiosk software. | [Home Assistant](https://f-droid.org/packages/io.homeassistant.companion.android.minimal/) |
 | Kitchen tablet | Recipes at the counter. | [Nextcloud Cookbook](https://f-droid.org/packages/de.micmun.android.nextcloudcookbook/) |
 | Family calendar | A shared calendar on the wall. | [Fossify Calendar](https://f-droid.org/packages/org.fossify.calendar/) |
 | Photo frame | A slideshow on a tablet you no longer use. | [Fossify Gallery](https://f-droid.org/packages/org.fossify.gallery/) |
-| **Car, bike, outdoors** | | |
+
+### Car, bike, outdoors
+
+| Use case | The device becomes | Start with (F-Droid) |
+|---|---|---|
 | Car or bike GPS | Offline maps on a mounted phone. | [OsmAnd](https://f-droid.org/packages/net.osmand.plus/), [Organic Maps](https://f-droid.org/packages/app.organicmaps/) |
 | Field and survival kit | Compass, weather, astronomy, and navigation, all offline. | [Trail Sense](https://f-droid.org/packages/com.kylecorry.trail_sense/) |
 | Night sky | A phone that opens to the stars. | [Sky Map](https://f-droid.org/packages/com.google.android.stardroid/) |
 | Run and ride tracker | A dedicated GPS logger. | [OpenTracks](https://f-droid.org/packages/de.dennisguse.opentracks/) |
-| **Music and hobbies** | | |
+
+### Music and hobbies
+
+| Use case | The device becomes | Start with (F-Droid) |
+|---|---|---|
 | Music player | An old phone becomes an iPod again. | [Auxio](https://f-droid.org/packages/org.oxycblt.auxio/) |
 | Podcast player | Podcasts and nothing else. | [AntennaPod](https://f-droid.org/packages/de.danoeh.antennapod/) |
 | Practice room | A metronome on the music stand. | [Metronome](https://f-droid.org/packages/de.moekadu.metronome/) |
@@ -101,7 +122,11 @@ Gretel was built for e-readers, where a reading app such as KOReader should simp
 | Game console | An old phone with a controller clip. | [RetroArch](https://f-droid.org/packages/com.retroarch/) |
 | Camera | A point-and-shoot for a kid, or for you. | [Open Camera](https://f-droid.org/packages/net.sourceforge.opencamera/) |
 | Travel translator | A spare phone for the trip. | [Translate You](https://f-droid.org/packages/com.bnyro.translate/) |
-| **Work and maker** | | |
+
+### Work and maker
+
+| Use case | The device becomes | Start with (F-Droid) |
+|---|---|---|
 | Barcode scanner | A scanner for the stockroom. | [Binary Eye](https://f-droid.org/packages/de.markusfisch.android.binaryeye/) |
 | Paper terminal | An e-ink tablet, a keyboard, and a shell. | [Termux](https://f-droid.org/packages/com.termux/) |
 
