@@ -3,18 +3,14 @@ package com.abeant.gretel.ui
 import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.abeant.gretel.HatchHost
 import com.abeant.gretel.R
 import com.abeant.gretel.Screen
@@ -24,11 +20,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * App picker. Every app is a row inside a [PagedColumn]; search hides rows
+ * rather than rebuilding them, so paging stays stable and nothing animates.
+ */
 class PickDoorFragment : Fragment() {
     private var binding: FragmentPickDoorBinding? = null
     private var selectedPackage: String? = null
-    private var allApps: List<LaunchableApp> = emptyList()
-    private lateinit var adapter: AppAdapter
+    private var rows: List<AppRow> = emptyList()
+
+    private class AppRow(val app: LaunchableApp, val view: View) {
+        val badge: TextView = view.findViewById(R.id.selectedBadge)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,29 +44,13 @@ class PickDoorFragment : Fragment() {
 
         StepMark.bind(view.stepRow.root as ViewGroup, 2)
         val snapshot = host.store.snapshot()
-        selectedPackage = snapshot.assignedPackage
+        selectedPackage = savedInstanceState?.getString(STATE_SELECTED) ?: snapshot.assignedPackage
+        view.confirmButton.isEnabled = selectedPackage != null
 
-        adapter = AppAdapter(emptyList(), selectedPackage) { app ->
-            selectedPackage = app.packageName
-            adapter.selectPackage(selectedPackage)
-            view.confirmButton.isEnabled = true
-        }
-        view.appList.layoutManager = LinearLayoutManager(requireContext())
-        view.appList.adapter = adapter
-        applyFilter("")
-
-        view.search.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = Unit
-            override fun afterTextChanged(s: Editable?) {
-                applyFilter(s?.toString().orEmpty())
-            }
-        })
-
+        view.search.doAfterTextChanged { applyFilter(it?.toString().orEmpty()) }
         view.backButton.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
-        view.confirmButton.isEnabled = selectedPackage != null
         view.confirmButton.setOnClickListener {
             val chosen = selectedPackage ?: return@setOnClickListener
             host.store.setAssignedPackage(chosen)
@@ -78,33 +65,84 @@ class PickDoorFragment : Fragment() {
             val loaded = withContext(Dispatchers.Default) {
                 host.catalog.listLaunchable()
             }
-            allApps = loaded
             if (selectedPackage == null) {
                 selectedPackage = host.catalog.preferredDefault(loaded)?.packageName
             }
-            adapter.selectPackage(selectedPackage)
+            buildRows(loaded)
             applyFilter(view.search.text?.toString().orEmpty())
             view.confirmButton.isEnabled = selectedPackage != null
         }
         return view.root
     }
 
-    private fun applyFilter(query: String) {
-        val needle = query.trim()
-        val filtered = if (needle.isEmpty()) {
-            allApps
-        } else {
-            allApps.filter {
-                it.label.contains(needle, ignoreCase = true) ||
-                    it.packageName.contains(needle, ignoreCase = true)
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(STATE_SELECTED, selectedPackage)
+    }
+
+    private fun buildRows(apps: List<LaunchableApp>) {
+        val view = binding ?: return
+        val pager = view.appPager
+        val inflater = LayoutInflater.from(requireContext())
+        rows = apps.map { app ->
+            val rowView = inflater.inflate(R.layout.item_app, pager, false)
+            AccessibilitySemantics.asButton(rowView)
+            rowView.findViewById<TextView>(R.id.appLabel).text = app.label
+            val icon = rowView.findViewById<ImageView>(R.id.appIcon)
+            if (app.icon != null) {
+                icon.setImageDrawable(app.icon)
+                icon.colorFilter = EINK_ICON_FILTER
+            } else {
+                icon.visibility = View.INVISIBLE
             }
+            rowView.setOnClickListener { select(app.packageName) }
+            pager.addView(rowView)
+            AppRow(app, rowView)
         }
-        adapter.submit(filtered)
+        rows.forEach { bindSelection(it) }
+    }
+
+    private fun select(packageName: String) {
+        if (selectedPackage == packageName) return
+        selectedPackage = packageName
+        rows.forEach { bindSelection(it) }
+        binding?.confirmButton?.isEnabled = true
+    }
+
+    private fun bindSelection(row: AppRow) {
+        val selected = row.app.packageName == selectedPackage
+        row.view.isSelected = selected
+        row.badge.visibility = if (selected) View.VISIBLE else View.GONE
+        row.view.contentDescription = if (selected) {
+            getString(R.string.app_item_selected, row.app.label)
+        } else {
+            row.app.label
+        }
+    }
+
+    private fun applyFilter(query: String) {
+        val view = binding ?: return
+        val needle = query.trim()
+        var shown = 0
+        rows.forEach { row ->
+            val matches = needle.isEmpty() ||
+                row.app.label.contains(needle, ignoreCase = true) ||
+                row.app.packageName.contains(needle, ignoreCase = true)
+            row.view.visibility = if (matches) View.VISIBLE else View.GONE
+            if (matches) shown++
+        }
+        view.emptyLabel.visibility = if (rows.isNotEmpty() && shown == 0) View.VISIBLE else View.GONE
+        view.appPager.goTo(0)
     }
 
     override fun onDestroyView() {
         binding = null
+        rows = emptyList()
         super.onDestroyView()
+    }
+
+    private companion object {
+        const val STATE_SELECTED = "selected"
     }
 }
 
@@ -123,83 +161,4 @@ private val EINK_ICON_FILTER: ColorMatrixColorFilter = run {
     )
     grey.postConcat(boost)
     ColorMatrixColorFilter(grey)
-}
-
-private class AppAdapter(
-
-    private var items: List<LaunchableApp>,
-    private var selectedPackage: String?,
-    private val onClick: (LaunchableApp) -> Unit,
-) : RecyclerView.Adapter<AppAdapter.Holder>() {
-
-    fun submit(next: List<LaunchableApp>) {
-        val previous = items
-        val selected = selectedPackage
-        val diff = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
-            override fun getOldListSize(): Int = previous.size
-            override fun getNewListSize(): Int = next.size
-            override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
-                previous[oldItemPosition].packageName == next[newItemPosition].packageName
-
-            override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-                val old = previous[oldItemPosition]
-                val new = next[newItemPosition]
-                return old.packageName == new.packageName &&
-                    old.label == new.label &&
-                    (old.packageName == selected) == (new.packageName == selected)
-            }
-        })
-        items = next
-        diff.dispatchUpdatesTo(this)
-    }
-
-    fun selectPackage(packageName: String?) {
-        if (selectedPackage == packageName) return
-        val oldPosition = items.indexOfFirst { it.packageName == selectedPackage }
-        selectedPackage = packageName
-        val newPosition = items.indexOfFirst { it.packageName == selectedPackage }
-        if (oldPosition >= 0) notifyItemChanged(oldPosition)
-        if (newPosition >= 0 && newPosition != oldPosition) notifyItemChanged(newPosition)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_app, parent, false)
-        AccessibilitySemantics.asButton(view)
-        return Holder(view)
-    }
-
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        val app = items[position]
-        holder.label.text = app.label
-        holder.packageName.text = app.packageName
-        val selected = app.packageName == selectedPackage
-        holder.itemView.isSelected = selected
-        holder.itemView.contentDescription = if (selected) {
-            holder.itemView.context.getString(R.string.app_item_selected, app.label)
-        } else {
-            app.label
-        }
-        holder.badge.visibility = if (selected) View.VISIBLE else View.GONE
-        holder.badge.setText(R.string.selected_mark)
-        if (app.icon != null) {
-            holder.icon.setImageDrawable(app.icon)
-            holder.icon.colorFilter = EINK_ICON_FILTER
-            holder.icon.visibility = View.VISIBLE
-        } else {
-            holder.icon.setImageDrawable(null)
-            holder.icon.colorFilter = null
-            holder.icon.visibility = View.INVISIBLE
-        }
-        holder.itemView.setOnClickListener { onClick(app) }
-    }
-
-    override fun getItemCount(): Int = items.size
-
-    class Holder(view: View) : RecyclerView.ViewHolder(view) {
-        val icon: ImageView = view.findViewById(R.id.appIcon)
-        val label: TextView = view.findViewById(R.id.appLabel)
-        val packageName: TextView = view.findViewById(R.id.appPackage)
-        val badge: TextView = view.findViewById(R.id.suggestedBadge)
-    }
 }

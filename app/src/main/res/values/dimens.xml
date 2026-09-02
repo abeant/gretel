@@ -13,4 +13,5 @@
     <dimen name="hairline">1dp</dimen>
     <dimen name="text_column">480dp</dimen>
     <dimen name="step_block">8dp</dimen>
+    <dimen name="paragraph_gap">12dp</dimen>
 </resources>

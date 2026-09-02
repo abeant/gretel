@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Settings row: hairline underneath, thick outline when focused. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/focus_outline" />
+    <item android:gravity="bottom">
+        <shape android:shape="rectangle">
+            <size android:height="@dimen/hairline" />
+            <solid android:color="?android:attr/textColorPrimary" />
+        </shape>
+    </item>
+</layer-list>
