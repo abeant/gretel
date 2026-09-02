@@ -31,12 +31,18 @@ Pick the app you actually want to use, make Gretel your home app, and that app b
 
 It was built for e-readers, where KOReader or another reading app should simply *be* the device. It works just as well on a spare phone or tablet you want to turn into a single-purpose tool.
 
-<p align="center">
-  <img src=".github/assets/welcome.png" width="30%" alt="Gretel welcome screen on a BOOX Nova Air">
-  <img src=".github/assets/choose-app.png" width="30%" alt="Choosing an installed app in Gretel">
-  <img src=".github/assets/settings.png" width="30%" alt="Gretel settings, with the chosen app, opening behaviour, and theme">
-</p>
-<p align="center"><sub>Captured on a BOOX Nova Air.</sub></p>
+<table align="center">
+  <tr>
+    <td align="center" valign="top"><img src=".github/assets/welcome.png" width="260" alt="Gretel welcome screen on a BOOX Nova Air"></td>
+    <td align="center" valign="top"><img src=".github/assets/choose-app.png" width="260" alt="Choosing an installed app in Gretel"></td>
+    <td align="center" valign="top"><img src=".github/assets/settings.png" width="260" alt="Gretel settings, with the chosen app, opening behaviour, and theme"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>Pick one app</b><br>the one you actually want to use</sub></td>
+    <td align="center"><sub><b>Make it home</b><br>that app is where Home always goes</sub></td>
+    <td align="center"><sub><b>Settings, one double-tap away</b><br>Home twice and you're never stuck</sub></td>
+  </tr>
+</table>
 
 ## Install
 
@@ -116,6 +122,12 @@ It is not a lock. Locks invite you to test them. Gretel is a default, and defaul
 | Network permission | Usually | Sometimes | Yes | **None** |
 
 > Gretel is not a kiosk or parental-control app. It is intentionally reversible and does not use Device Admin, Accessibility, overlays, or lock task mode. If you need to stop someone from leaving an app, Gretel is the wrong tool.
+
+## Pairs with Hansel
+
+Gretel makes KOReader the first thing the device shows. [Hansel](https://github.com/abeant/hansel.koplugin) makes your Grimmory library the first thing KOReader shows. Together an e-reader boots straight into your book covers.
+
+They're independent. Gretel works with any app, with or without Hansel.
 
 ## Compatibility
 
