@@ -38,6 +38,8 @@
   .diagram { margin: 44px 0; text-align: center; }
   .diagram img { width: 100%; max-width: 560px; }
   @media (prefers-color-scheme: dark) { .diagram img { filter: invert(1); } }
+  .pair { margin: 32px 0; text-align: center; }
+  .pair img { width: 100%; max-width: 640px; }
   .shots { display: flex; gap: 16px; margin: 40px 0 0; }
   .shots img { width: 33%; border: 2px solid currentColor; display: block; }
   ul { padding-left: 20px; }
@@ -141,6 +143,16 @@
   <div class="note">
     <p>Gretel is not a kiosk or parental-control app. It is intentionally reversible and does not use Device Admin, Accessibility, overlays, or lock task mode. If you need to stop someone from leaving an app, Gretel is the wrong tool.</p>
   </div>
+
+  <h2>Pairs with Hansel</h2>
+  <p class="pair">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/hansel-x-gretel-dark.svg">
+      <img src="assets/hansel-x-gretel.svg" alt="Hansel × Gretel: the Hansel lockup, a cross, and the Gretel lockup">
+    </picture>
+  </p>
+  <p>Gretel makes KOReader the first thing the device shows. <a href="https://github.com/abeant/hansel.koplugin">Hansel</a> makes your Grimmory library the first thing KOReader shows. Put them together on an Android e-reader and the device boots straight into your book covers: press Home and you're back at the library, not at an app grid.</p>
+  <p>They're independent. Hansel is a KOReader plugin that runs on any KOReader device. Gretel works with any app, reading or not.</p>
 
   <h2>Compatibility</h2>
   <table>
