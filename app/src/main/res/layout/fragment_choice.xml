@@ -11,42 +11,26 @@
         android:layout_height="wrap_content"
         android:text="@string/back_label" />
 
-    <include
-        android:id="@+id/stepRow"
-        layout="@layout/include_steps"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp" />
-
     <TextView
+        android:id="@+id/title"
         style="@style/Text.Gretel.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/hatch_lesson_title" />
+        android:layout_marginTop="16dp" />
 
     <com.abeant.gretel.ui.PagedColumn
-        android:id="@+id/lessonPager"
+        android:id="@+id/choicePager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="12dp"
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/lessonBody"
+            android:id="@+id/body"
             style="@style/Text.Gretel.Body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="12dp"
-            android:maxWidth="@dimen/text_column"
-            android:text="@string/hatch_lesson_body" />
+            android:layout_marginBottom="16dp"
+            android:maxWidth="@dimen/text_column" />
     </com.abeant.gretel.ui.PagedColumn>
-
-    <Button
-        android:id="@+id/finishButton"
-        style="@style/Widget.Gretel.Button.Filled"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/continue_label" />
 </LinearLayout>

@@ -1,0 +1,5 @@
+Every screen now pages instead of scrolling, the way an e-reader does. Page with the buttons, a swipe, or your device's page keys.
+
+Settings are reorganised so they fit a small screen, with a banner when Gretel is not your home app and a button that returns you to your chosen app. Double-Home timing and theme are now quick, normal, or relaxed and auto, white, or black on their own pages.
+
+If your chosen app closes over and over, Gretel stops reopening it and explains why instead of looping. "Open after a restart" now detects a restart reliably, even if you unlock the device minutes later.

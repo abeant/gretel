@@ -39,12 +39,13 @@
   .diagram img { width: 100%; max-width: 560px; }
   @media (prefers-color-scheme: dark) { .diagram img { filter: invert(1); } }
   .shots { display: flex; gap: 16px; margin: 40px 0 0; }
-  .shots img { width: 50%; border: 2px solid currentColor; display: block; }
+  .shots img { width: 33%; border: 2px solid currentColor; display: block; }
   ul { padding-left: 20px; }
   li { margin: 10px 0; }
   li b { font-weight: 700; }
   table { border-collapse: collapse; width: 100%; font-size: 15px; }
-  th, td { border-bottom: 1px solid currentColor; padding: 10px 8px; text-align: left; }
+  th, td { border-bottom: 1px solid currentColor; padding: 10px 8px; text-align: left; vertical-align: top; }
+  th[colspan] { padding-top: 22px; }
   th { font-weight: 700; }
   code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
   footer { margin-top: 72px; font-size: 15px; }
@@ -81,6 +82,7 @@
   <div class="shots">
     <img src="assets/welcome.png" alt="Gretel welcome screen on a BOOX Nova Air e-reader">
     <img src="assets/choose-app.png" alt="Choosing an installed app in Gretel">
+    <img src="assets/settings.png" alt="Gretel settings, with the chosen app, opening behaviour, and theme">
   </div>
 
   <hr class="rule">
@@ -88,15 +90,59 @@
   <h2>What it does</h2>
   <ul>
     <li><b>One chosen app replaces the home screen.</b> Your Home button or gesture opens it, every time.</li>
-    <li><b>Your app stays in front.</b> Gretel can bring it back after a restart or when the app exits. Both behaviors are optional.</li>
+    <li><b>Your app stays in front.</b> Gretel can bring it back after a restart or when the app exits. Both behaviors are optional, and if the app keeps crashing Gretel stops reopening it and shows settings instead.</li>
     <li><b>Settings are always within reach.</b> Home twice quickly opens Gretel instead of your chosen app.</li>
-    <li><b>Designed for e-ink.</b> High contrast, large targets, no ripples, no unnecessary animation.</li>
+    <li><b>Designed for e-ink.</b> High contrast, large targets, no ripples, no animation. Every screen is paged, never scrolled.</li>
     <li><b>Private by construction.</b> No account, ads, analytics, network permission, or broad package visibility.</li>
     <li><b>Easy to undo.</b> Choose another home app in Android settings, or uninstall Gretel like any other app.</li>
   </ul>
 
-  <h2>Made for one-purpose devices</h2>
-  <p>Gretel was built for e-readers, where a reading app such as KOReader should simply be the device. It works just as well on a spare phone or tablet you want to turn into a distraction-free reading, writing, reference, or dashboard tool.</p>
+  <h2>Use cases</h2>
+  <p>Gretel was built for e-readers, where a reading app such as KOReader should simply be the device. The same trick turns any spare phone or tablet into a single-purpose tool. Pick the app, install Gretel, done.</p>
+<table>
+  <tr><th>Use case</th><th>The device becomes</th><th>Start with (F-Droid)</th></tr>
+  <tr><th colspan="3">Read and write</th></tr>
+  <tr><td>E-reader</td><td>A book. Home returns to the reader, every time.</td><td><a href="https://f-droid.org/packages/org.koreader.launcher.fdroid/">KOReader</a>, <a href="https://f-droid.org/packages/com.foobnix.pro.pdf.reader/">Librera</a></td></tr>
+  <tr><td>Read-later device</td><td>Your saved articles and feeds, without a feed.</td><td><a href="https://f-droid.org/packages/fr.gaulupeau.apps.InThePoche/">wallabag</a>, <a href="https://f-droid.org/packages/com.nononsenseapps.feeder/">Feeder</a></td></tr>
+  <tr><td>Writing deck</td><td>A tablet and a Bluetooth keyboard become a typewriter.</td><td><a href="https://f-droid.org/packages/net.gsantner.markor/">Markor</a></td></tr>
+  <tr><td>Paper notebook</td><td>An e-ink tablet that opens straight to a blank page.</td><td><a href="https://f-droid.org/packages/com.adilhanney.saber/">Saber</a></td></tr>
+  <tr><td>Scripture</td><td>A device that opens to the text, nothing else.</td><td><a href="https://f-droid.org/packages/net.bible.android.activity/">AndBible</a></td></tr>
+  <tr><th colspan="3">Focus and wellbeing</th></tr>
+  <tr><td>Study cards</td><td>An old tablet becomes a deck of flashcards.</td><td><a href="https://f-droid.org/packages/com.ichi2.anki/">AnkiDroid</a></td></tr>
+  <tr><td>Sleep phone</td><td>The bedroom phone is an alarm clock or white noise, and cannot be anything else.</td><td><a href="https://f-droid.org/packages/org.fossify.clock/">Fossify Clock</a>, <a href="https://f-droid.org/packages/com.github.ashutoshgngwr.noice/">Noice</a></td></tr>
+  <tr><td>Habit tracker</td><td>One screen, one question: did you do it today?</td><td><a href="https://f-droid.org/packages/org.isoron.uhabits/">Loop Habit Tracker</a></td></tr>
+  <tr><td>Dumbphone</td><td>A spare phone that only makes calls or only sends texts.</td><td><a href="https://f-droid.org/packages/org.fossify.phone/">Fossify Phone</a>, <a href="https://f-droid.org/packages/org.fossify.messages/">Fossify Messages</a></td></tr>
+  <tr><th colspan="3">Family and accessibility</th></tr>
+  <tr><td>Grandparent's phone</td><td>Opens to video calls. If they get lost, Home brings the calls back.</td><td><a href="https://f-droid.org/packages/org.jitsi.meet/">Jitsi Meet</a>, <a href="https://f-droid.org/packages/org.linphone/">Linphone</a></td></tr>
+  <tr><td>Kid's audiobook player</td><td>An old phone with stories and no store.</td><td><a href="https://f-droid.org/packages/de.ph1b.audiobook/">Voice</a></td></tr>
+  <tr><th colspan="3">Around the house</th></tr>
+  <tr><td>Wall dashboard</td><td>A Home Assistant tablet without kiosk software.</td><td><a href="https://f-droid.org/packages/io.homeassistant.companion.android.minimal/">Home Assistant</a></td></tr>
+  <tr><td>Kitchen tablet</td><td>Recipes at the counter.</td><td><a href="https://f-droid.org/packages/de.micmun.android.nextcloudcookbook/">Nextcloud Cookbook</a></td></tr>
+  <tr><td>Family calendar</td><td>A shared calendar on the wall.</td><td><a href="https://f-droid.org/packages/org.fossify.calendar/">Fossify Calendar</a></td></tr>
+  <tr><td>Photo frame</td><td>A slideshow on a tablet you no longer use.</td><td><a href="https://f-droid.org/packages/org.fossify.gallery/">Fossify Gallery</a></td></tr>
+  <tr><th colspan="3">Car, bike, outdoors</th></tr>
+  <tr><td>Car or bike GPS</td><td>Offline maps on a mounted phone.</td><td><a href="https://f-droid.org/packages/net.osmand.plus/">OsmAnd</a>, <a href="https://f-droid.org/packages/app.organicmaps/">Organic Maps</a></td></tr>
+  <tr><td>Field and survival kit</td><td>Compass, weather, astronomy, and navigation, all offline.</td><td><a href="https://f-droid.org/packages/com.kylecorry.trail_sense/">Trail Sense</a></td></tr>
+  <tr><td>Night sky</td><td>A phone that opens to the stars.</td><td><a href="https://f-droid.org/packages/com.google.android.stardroid/">Sky Map</a></td></tr>
+  <tr><td>Run and ride tracker</td><td>A dedicated GPS logger.</td><td><a href="https://f-droid.org/packages/de.dennisguse.opentracks/">OpenTracks</a></td></tr>
+  <tr><th colspan="3">Music and hobbies</th></tr>
+  <tr><td>Music player</td><td>An old phone becomes an iPod again.</td><td><a href="https://f-droid.org/packages/org.oxycblt.auxio/">Auxio</a></td></tr>
+  <tr><td>Podcast player</td><td>Podcasts and nothing else.</td><td><a href="https://f-droid.org/packages/de.danoeh.antennapod/">AntennaPod</a></td></tr>
+  <tr><td>Practice room</td><td>A metronome on the music stand.</td><td><a href="https://f-droid.org/packages/de.moekadu.metronome/">Metronome</a></td></tr>
+  <tr><td>Chess board</td><td>Chess on e-ink.</td><td><a href="https://f-droid.org/packages/org.petero.droidfish/">DroidFish</a></td></tr>
+  <tr><td>Crossword book</td><td>A puzzle book that never runs out.</td><td><a href="https://f-droid.org/packages/app.crossword.yourealwaysbe.forkyz/">Forkyz</a></td></tr>
+  <tr><td>Game console</td><td>An old phone with a controller clip.</td><td><a href="https://f-droid.org/packages/com.retroarch/">RetroArch</a></td></tr>
+  <tr><td>Camera</td><td>A point-and-shoot for a kid, or for you.</td><td><a href="https://f-droid.org/packages/net.sourceforge.opencamera/">Open Camera</a></td></tr>
+  <tr><td>Travel translator</td><td>A spare phone for the trip.</td><td><a href="https://f-droid.org/packages/com.bnyro.translate/">Translate You</a></td></tr>
+  <tr><th colspan="3">Work and maker</th></tr>
+  <tr><td>Barcode scanner</td><td>A scanner for the stockroom.</td><td><a href="https://f-droid.org/packages/de.markusfisch.android.binaryeye/">Binary Eye</a></td></tr>
+  <tr><td>Paper terminal</td><td>An e-ink tablet, a keyboard, and a shell.</td><td><a href="https://f-droid.org/packages/com.termux/">Termux</a></td></tr>
+</table>
+  <p>Gretel does not keep the screen on and does not lock anything. For a dashboard or photo frame, use the app's own keep-awake setting or Android's "Stay awake while charging" developer option. Built something that is not listed? <a href="https://github.com/abeant/gretel/issues">Open an issue</a> and it can join the table.</p>
+
+  <h2>For digital minimalists</h2>
+  <p>A minimal launcher still shows you a list. A list is still a menu, and a menu is still a decision. Gretel removes the menu. Your device opens to the one thing you brought it for, and Home takes you back there, not to a place where other things can ask for you.</p>
+  <p>It is not a lock. Locks invite you to test them. Gretel is a default, and defaults are what change behaviour. Everything stays one settings screen away, so you never feel trapped, and never need to.</p>
 
   <div class="note">
     <p>Gretel is not a kiosk or parental-control app. It is intentionally reversible and does not use Device Admin, Accessibility, overlays, or lock task mode. If you need to stop someone from leaving an app, Gretel is the wrong tool.</p>

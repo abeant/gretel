@@ -23,15 +23,14 @@
         style="@style/Text.Gretel.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="@string/set_home_title" />
 
-    <ScrollView
+    <com.abeant.gretel.ui.PagedColumn
+        android:id="@+id/setHomePager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true"
-        android:overScrollMode="never">
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/body"
@@ -39,16 +38,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="12dp"
             android:maxWidth="@dimen/text_column"
             android:text="@string/set_home_body" />
-    </ScrollView>
+    </com.abeant.gretel.ui.PagedColumn>
 
     <Button
         android:id="@+id/homeSettingsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
         android:text="@string/open_home_settings"
         android:visibility="gone" />
 
@@ -56,7 +55,7 @@
         android:id="@+id/skipButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
         android:text="@string/skip_for_now" />
 
     <Button
@@ -64,5 +63,6 @@
         style="@style/Widget.Gretel.Button.Filled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="@string/set_as_home" />
 </LinearLayout>
