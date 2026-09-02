@@ -104,7 +104,9 @@ Gretel was built for e-readers, where a reading app such as KOReader should simp
 | 📦 | Barcode scanner | A scanner for the stockroom. | [Binary Eye](https://f-droid.org/packages/de.markusfisch.android.binaryeye/) |
 | 💻 | Paper terminal | An e-ink tablet, a keyboard, and a shell. | [Termux](https://f-droid.org/packages/com.termux/) |
 
-Gretel does not keep the screen on and does not lock anything. For a dashboard or photo frame, use the app's own keep-awake setting or Android's "Stay awake while charging" developer option. If you built something that is not listed here, [open an issue](https://github.com/abeant/gretel/issues) and it can join the table.## For digital minimalists
+Gretel does not keep the screen on and does not lock anything. For a dashboard or photo frame, use the app's own keep-awake setting or Android's "Stay awake while charging" developer option. If you built something that is not listed here, [open an issue](https://github.com/abeant/gretel/issues) and it can join the table.
+
+## For digital minimalists
 
 A minimal launcher still shows you a list. A list is still a menu, and a menu is still a decision. Gretel removes the menu. Your device opens to the one thing you brought it for, and Home takes you back there, not to a place where other things can ask for you.
 
