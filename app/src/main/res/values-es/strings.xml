@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tagline">una app en lugar de una pantalla de inicio</string>
-    <string name="welcome_body">Gretel convierte tu pantalla de inicio en una app que tú eliges. Una vez configurada como tu app de inicio, usar Inicio te lleva de vuelta a esa app en lugar de mostrar una cuadrícula de apps.\n\nGretel no bloquea tu dispositivo. Sus ajustes, los ajustes de Android y tu iniciador anterior siguen a tu alcance.</string>
+    <string name="welcome_body">Gretel convierte tu pantalla de inicio en una app que tú eliges. Una vez configurada como tu app de inicio, Inicio te lleva de vuelta a esa app en lugar de mostrar una cuadrícula de apps.\n\nGretel no bloquea tu dispositivo. Sus ajustes, los ajustes de Android y tu iniciador anterior siguen a tu alcance.</string>
     <string name="continue_label">Continuar</string>
 
-    <string name="pick_door_title">Elige la app que quieres usar</string>
+    <string name="pick_door_title">Elige tu única app</string>
     <string name="pick_door_hint">Buscar entre las apps instaladas</string>
+    <string name="pick_door_empty">Ninguna app instalada coincide con esa búsqueda.</string>
     <string name="use_this_door">Usar esta app</string>
-    <string name="suggested_badge">Sugerida</string>
     <string name="app_item_selected">%1$s, seleccionada</string>
 
     <string name="set_home_title">Configura Gretel como tu app de inicio</string>
-    <string name="set_home_body">Android te pedirá confirmación. Una vez configurada Gretel, usar Inicio te lleva de vuelta a la app que elegiste.\n\nNada queda bloqueado. Puedes elegir otra app de inicio en cualquier momento desde los ajustes de Android.</string>
+    <string name="set_home_body">Android te pedirá confirmación. Una vez configurada Gretel, Inicio te lleva de vuelta a la app que elegiste.\n\nNada queda bloqueado. Puedes elegir otra app de inicio en cualquier momento desde los ajustes de Android.</string>
     <string name="set_as_home">Configurar Gretel como app de inicio</string>
     <string name="open_home_settings">Abrir los ajustes de la app de inicio</string>
     <string name="skip_for_now">Omitir por ahora</string>
@@ -20,44 +20,62 @@
     <string name="home_status_yes">Gretel</string>
     <string name="home_status_no">Sin configurar</string>
     <string name="youre_all_set">Todo listo</string>
-    <string name="home_already_body">Gretel ya es tu app de inicio. Usa Inicio una vez para volver a la app elegida, o dos veces rápidamente para abrir los ajustes de Gretel.</string>
+    <string name="home_already_body">Gretel ya es tu app de inicio. Inicio una vez te lleva de vuelta a la app elegida. Inicio dos veces rápidamente abre los ajustes de Gretel.</string>
     <string name="selected_mark">Seleccionada</string>
     <string name="source_repo">Código fuente en GitHub</string>
     <string name="step_progress">Paso %1$d de %2$d</string>
     <string name="back_label">Atrás</string>
 
-    <string name="hatch_lesson_title">Usar Inicio</string>
-    <string name="hatch_lesson_body">Usa Inicio una vez para volver a la app elegida. Usa Inicio dos veces rápidamente para abrir los ajustes de Gretel.\n\nPuedes cambiar el intervalo del doble Inicio más adelante en los ajustes.</string>
+    <string name="page_previous">Anterior</string>
+    <string name="page_next">Siguiente</string>
+    <string name="page_progress">Página %1$d de %2$d</string>
 
-    <string name="missing_door_banner">Esa app ya no está instalada. Elige otra.</string>
+    <string name="hatch_lesson_title">Cómo volver</string>
+    <string name="hatch_lesson_body">Inicio una vez te lleva de vuelta a la app elegida.\n\nInicio dos veces rápidamente abre Gretel en su lugar. Si la segunda pulsación no se detecta, elige un intervalo de doble Inicio más relajado en los ajustes.\n\nSi alguna vez te quedas sin salida, Gretel también aparece en Aplicaciones dentro de los ajustes de Android, y allí puedes elegir otra app de inicio en cualquier momento.</string>
+    <string name="missing_door_banner">Esa app ya no está instalada. Toca para elegir otra.</string>
+    <string name="not_home_banner">Gretel aún no es tu app de inicio. Toca para configurarla.</string>
+    <string name="relaunch_loop_banner">%1$s se cerró varias veces seguidas, así que Gretel dejó de reabrirla. Toca para intentarlo de nuevo.</string>
     <string name="section_your_app">Tu app</string>
     <string name="section_opening">Apertura</string>
-    <string name="section_getting_back">Cómo volver</string>
     <string name="section_device">Dispositivo</string>
+    <string name="section_help">Ayuda</string>
     <string name="section_door">App</string>
     <string name="android_settings">Ajustes de Android</string>
-    <string name="open_on_boot">Después de reiniciar</string>
+    <string name="open_on_boot">Abrir tras un reinicio</string>
     <string name="section_home">App de inicio</string>
     <string name="setting_with_value">%1$s: %2$s</string>
-    <string name="section_hatch_timing">Intervalo</string>
-    <string name="window_500">500 ms</string>
-    <string name="window_800">800 ms</string>
-    <string name="window_1200">1200 ms</string>
-    <string name="open_now">Abrir ahora</string>
+    <string name="section_hatch_timing">Intervalo del doble Inicio</string>
+    <string name="return_to_app">Volver a %1$s</string>
+    <string name="choose_app_label">Elegir una app</string>
     <string name="section_display">Tema</string>
-    <string name="theme_auto">Automático</string>
-    <string name="theme_white">Blanco</string>
-    <string name="theme_black">Negro</string>
-    <string name="about_license">Información y licencia</string>
+    <string name="about_license">Acerca de y licencia</string>
     <string name="door_none">Ninguna app elegida</string>
     <string name="door_missing">No instalada: %1$s</string>
-    <string name="relaunch_on_close">Si la app se cierra</string>
+    <string name="relaunch_on_close">Reabrir si se cierra</string>
 
-    <string name="replay_intro">Volver a ver la introducción</string>
-    <string name="about_title">Información</string>
+    <string name="timing_title">Intervalo del doble Inicio</string>
+    <string name="timing_body">Con qué rapidez hay que pulsar Inicio dos veces para abrir Gretel en lugar de tu app.</string>
+    <string name="timing_quick">Rápido</string>
+    <string name="timing_quick_desc">Medio segundo entre pulsaciones</string>
+    <string name="timing_normal">Normal</string>
+    <string name="timing_normal_desc">0,8 segundos entre pulsaciones</string>
+    <string name="timing_relaxed">Relajado</string>
+    <string name="timing_relaxed_desc">1,2 segundos entre pulsaciones</string>
+
+    <string name="theme_title">Tema</string>
+    <string name="theme_body">Se aplica a las pantallas de Gretel. La app que elegiste conserva su propio aspecto.</string>
+    <string name="theme_auto">Automático</string>
+    <string name="theme_auto_desc">Sigue el modo oscuro del dispositivo</string>
+    <string name="theme_white">Blanco</string>
+    <string name="theme_white_desc">Texto negro sobre blanco</string>
+    <string name="theme_black">Negro</string>
+    <string name="theme_black_desc">Texto blanco sobre negro</string>
+
+    <string name="replay_intro">Mostrar la introducción de nuevo</string>
+    <string name="about_title">Acerca de</string>
     <string name="about_version">Gretel %1$s (%2$d)</string>
-    <string name="about_identity">Gretel es un anti-iniciador para Android. Elige una app y Gretel la convierte en el lugar al que siempre vuelve tu dispositivo.\n\nGretel no bloquea tu dispositivo. Usa Inicio dos veces rápidamente para abrir sus ajustes, elige otra app de inicio en los ajustes de Android o desinstálala como cualquier otra app.</string>
-    <string name="about_privacy">Gretel no recopila nada. No tiene cuentas, analíticas, anuncios ni acceso a la red.</string>
-    <string name="about_license_heading">Licencia Apache 2.0</string>
-    <string name="about_license_fallback">Disponible bajo la Licencia Apache, versión 2.0. Consulta el archivo LICENSE en el repositorio del código fuente.</string>
+    <string name="about_identity">Gretel es un anti-iniciador para Android. Elige una app y Gretel la convierte en el lugar al que tu dispositivo siempre vuelve.\n\nGretel no bloquea tu dispositivo. Inicio dos veces rápidamente abre sus ajustes, los ajustes de Android te permiten elegir otra app de inicio, y puedes desinstalarla como cualquier otra app.</string>
+    <string name="about_privacy">Gretel no recopila nada. Sin cuentas, analíticas, anuncios ni acceso a la red.</string>
+    <string name="about_license_heading">Apache License 2.0</string>
+    <string name="about_license_fallback">Con licencia Apache License, versión 2.0. Consulta el archivo LICENSE en el repositorio del código fuente.</string>
 </resources>
