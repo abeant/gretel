@@ -106,7 +106,7 @@ It is not a lock. Locks invite you to test them. Gretel is a default, and defaul
 
 ## How it compares
 
-| | Stock launcher | Minimal launchers | Kiosk / MDM apps | **Gretel** |
+| Item | Stock launcher | Minimal launchers | Kiosk / MDM apps | **Gretel** |
 |---|---|---|---|---|
 | Home opens | An app grid | A short app list | A locked app | **The one app you chose** |
 | Choices per Home press | Many | A few | None | **None** |
