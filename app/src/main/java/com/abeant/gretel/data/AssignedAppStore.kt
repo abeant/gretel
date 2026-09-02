@@ -73,6 +73,22 @@ class AssignedAppStore(
         preferences.edit { putBoolean(OPEN_ON_BOOT, enabled) }
     }
 
+    /** Boot identity seen by [com.abeant.gretel.hatch.BootGate], or null before the first Home. */
+    fun lastBootId(): Long? =
+        preferences.getLong(LAST_BOOT_ID, NO_BOOT_ID).takeIf { it != NO_BOOT_ID }
+
+    fun setLastBootId(bootId: Long) {
+        preferences.edit { putLong(LAST_BOOT_ID, bootId) }
+    }
+
+    /** Device uptime at the last Home delivery, or null before the first one. */
+    fun lastUptimeMs(): Long? =
+        preferences.getLong(LAST_UPTIME_MS, NO_BOOT_ID).takeIf { it != NO_BOOT_ID }
+
+    fun setLastUptimeMs(uptimeMs: Long) {
+        preferences.edit { putLong(LAST_UPTIME_MS, uptimeMs) }
+    }
+
     companion object {
         const val PREFERENCES_NAME = "gretel"
         const val ASSIGNED_PACKAGE = "assigned_package"
@@ -82,6 +98,9 @@ class AssignedAppStore(
         const val TRUE_BLACK = "true_black"
         const val RELAUNCH_ON_CLOSE = "relaunch_on_close"
         const val OPEN_ON_BOOT = "open_on_boot"
+        const val LAST_BOOT_ID = "last_boot_id"
+        const val LAST_UPTIME_MS = "last_uptime_ms"
+        private const val NO_BOOT_ID = Long.MIN_VALUE
 
         const val DEFAULT_HATCH_WINDOW_MS = 800L
         val ALLOWED_HATCH_WINDOWS = listOf(500L, 800L, 1200L)
