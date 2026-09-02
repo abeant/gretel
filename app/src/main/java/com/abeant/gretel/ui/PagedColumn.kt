@@ -93,7 +93,6 @@ class PagedColumn @JvmOverloads constructor(
         if (target == page) return
         page = target
         requestLayout()
-        announceForAccessibility(pageDescription())
     }
 
     fun next(): Boolean {
@@ -252,8 +251,12 @@ class PagedColumn @JvmOverloads constructor(
 
     private fun updateFooter() {
         val label = context.getString(R.string.page_indicator, page + 1, max(1, pageCount))
-        if (pageLabel.text.toString() != label) pageLabel.text = label
-        pageLabel.contentDescription = pageDescription()
+        // The label is a polite live region, so setting it is what announces a
+        // page turn. Only assign on a real change, or every measure would talk.
+        if (pageLabel.text.toString() != label) {
+            pageLabel.text = label
+            pageLabel.contentDescription = pageDescription()
+        }
         // On a 1-bit screen a disabled outline is indistinguishable from an
         // enabled one, so an unavailable direction is hidden rather than dimmed.
         // INVISIBLE, not GONE, so the indicator stays centred.

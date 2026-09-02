@@ -16,6 +16,7 @@
     <TextView
         android:id="@+id/pagerLabel"
         style="@style/Text.Gretel.Mono"
+        android:accessibilityLiveRegion="polite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="72dp"
