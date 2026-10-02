@@ -17,8 +17,16 @@
       <path transform="translate(205,206)" d="M0,14 C-18,2 -16,-10 -8,-13 C-3,-15 0,-10 0,-7 C0,-10 3,-15 8,-13 C16,-10 18,2 0,14 z"/>
     </g>
   </g>
-  <path fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round"
-    d="M346,75 L516,140 M346,107.5 L516,140 M346,140 L516,140 M346,172.5 L516,140 M346,205 L516,140"/>
+  <path fill="none" stroke="#000" stroke-width="5.5" stroke-linecap="round"
+    d="M346,75 L516,140"/>
+  <path fill="none" stroke="#000" stroke-width="5.5" stroke-linecap="round"
+    d="M346,107.5 L516,140"/>
+  <path fill="none" stroke="#000" stroke-width="5.5" stroke-linecap="round"
+    d="M346,140 L516,140"/>
+  <path fill="none" stroke="#000" stroke-width="5.5" stroke-linecap="round"
+    d="M346,172.5 L516,140"/>
+  <path fill="none" stroke="#000" stroke-width="5.5" stroke-linecap="round"
+    d="M346,205 L516,140"/>
   <path fill="#000" d="M514,126 L540,140 L514,154 Z"/>
   <g transform="translate(-86,0)">
     <path fill="#000" fill-rule="evenodd"
