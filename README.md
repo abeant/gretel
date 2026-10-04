@@ -8,7 +8,7 @@
 
 <p align="center"><strong>The anti-launcher. Your home screen is one app.</strong></p>
 
-<p align="center"><a href="https://abeant.github.io/gretel/">abeant.github.io/gretel</a></p>
+<p align="center"><a href="https://abeant.com/gretel/">abeant.com/gretel</a></p>
 
 <p align="center">
   <a href="https://github.com/abeant/gretel/actions/workflows/ci.yml"><img src="https://github.com/abeant/gretel/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
@@ -128,9 +128,21 @@ It is not a lock. Locks invite you to test them. Gretel is a default, and defaul
 ## Pairs with Hansel
 
 <p align="center">
+  <a href="https://github.com/abeant/hansel.koplugin">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset=".github/assets/hansel-lockup-dark.svg">
+      <img src=".github/assets/hansel-lockup.svg" width="246" height="37" alt="Hansel">
+    </picture>
+  </a>
+  &emsp;
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/hansel-x-gretel-dark.svg">
-    <img src=".github/assets/hansel-x-gretel.svg" width="640" alt="Hansel × Gretel: the Hansel lockup, a cross, and the Gretel lockup">
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/pair-cross-dark.svg">
+    <img src=".github/assets/pair-cross.svg" width="20" height="37" alt="">
+  </picture>
+  &emsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/gretel-lockup-dark.svg">
+    <img src=".github/assets/gretel-lockup.svg" width="234" height="37" alt="Gretel">
   </picture>
 </p>
 
