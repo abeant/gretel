@@ -6,13 +6,13 @@ PARA DISPOSITIVOS DE UN SOLO PROPÓSITO
 Gretel fue creada para lectores electrónicos, donde una app de lectura como KOReader debería ser sencillamente el dispositivo. Funciona igual de bien en un teléfono o una tableta de repuesto que quieras convertir en una herramienta sin distracciones para leer, escribir, consultar o mostrar un panel.
 
 DISEÑADA PARA TINTA ELECTRÓNICA
-Alto contraste en blanco y negro, objetivos táctiles grandes, sin ondas y sin animaciones innecesarias. Elige tema automático, blanco o negro puro.
+Alto contraste en blanco y negro, objetivos táctiles grandes, sin ondas y sin animaciones. Cada pantalla se pagina, nunca se desplaza, y los botones de página del e-reader pasan las páginas. Elige tema automático, blanco o negro puro.
 
 NUNCA TE QUEDAS ATRAPADO
-Pulsa Inicio una vez para volver a la app elegida. Pulsa Inicio dos veces rápido para abrir los ajustes de Gretel. El intervalo se puede configurar en 500, 800 o 1200 ms. Puedes cambiar de app, elegir otra pantalla de inicio o desinstalar Gretel cuando quieras.
+Pulsa Inicio una vez para volver a la app elegida. Pulsa Inicio dos veces rápido para abrir los ajustes de Gretel. El intervalo del doble Inicio puede ser rápido, normal o relajado. Puedes cambiar de app, elegir otra pantalla de inicio o desinstalar Gretel cuando quieras.
 
 AJUSTES QUE TÚ CONTROLAS
-Gretel puede volver a abrir tu app después de reiniciar y traerla de vuelta cuando la app se cierra. Ambos comportamientos son ajustes que puedes desactivar.
+Gretel puede volver a abrir tu app después de reiniciar y traerla de vuelta cuando la app se cierra. Ambos comportamientos son ajustes que puedes desactivar. Si la app se cierra una y otra vez, Gretel deja de reabrirla y muestra sus ajustes.
 
 NO ES UN MODO QUIOSCO
 Gretel no usa administración del dispositivo, servicios de accesibilidad, superposiciones ni el modo de tareas bloqueadas. Es una app de inicio, no una jaula. Si necesitas impedir que alguien salga de una app, Gretel no es la herramienta adecuada.

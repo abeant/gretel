@@ -2,17 +2,17 @@
 <resources>
     <string name="app_name" translatable="false">Gretel</string>
     <string name="tagline">one app instead of a home screen</string>
-    <string name="welcome_body">Gretel turns your home screen into one app you choose. Once it is set as your home app, using Home returns you to that app instead of an app grid.\n\nGretel does not lock your device. Its settings, Android settings, and your previous launcher stay within reach.</string>
+    <string name="welcome_body">Gretel turns your home screen into one app you choose. Once it is set as your home app, Home returns you to that app instead of an app grid.\n\nGretel does not lock your device. Its settings, Android settings, and your previous launcher stay within reach.</string>
     <string name="continue_label">Continue</string>
 
-    <string name="pick_door_title">Choose the app you want to use</string>
+    <string name="pick_door_title">Choose your one app</string>
     <string name="pick_door_hint">Search installed apps</string>
+    <string name="pick_door_empty">No installed app matches that search.</string>
     <string name="use_this_door">Use this app</string>
-    <string name="suggested_badge">Suggested</string>
     <string name="app_item_selected">%1$s, selected</string>
 
     <string name="set_home_title">Set Gretel as your home app</string>
-    <string name="set_home_body">Android will ask you to confirm. Once Gretel is set, using Home returns you to the app you chose.\n\nNothing is locked. You can choose another home app at any time in Android settings.</string>
+    <string name="set_home_body">Android will ask you to confirm. Once Gretel is set, Home returns you to the app you chose.\n\nNothing is locked. You can choose another home app at any time in Android settings.</string>
     <string name="set_as_home">Set Gretel as home app</string>
     <string name="open_home_settings">Open Android home settings</string>
     <string name="skip_for_now">Skip for now</string>
@@ -21,7 +21,7 @@
     <string name="home_status_yes">Gretel</string>
     <string name="home_status_no">Not set</string>
     <string name="youre_all_set">You\'re all set</string>
-    <string name="home_already_body">Gretel is now your home app. Use Home once to return to your chosen app, or twice quickly to open Gretel\'s settings.</string>
+    <string name="home_already_body">Gretel is now your home app. Home once returns you to your chosen app. Home twice quickly opens Gretel\'s settings.</string>
     <string name="selected_mark">Selected</string>
     <string name="source_repo">Source on GitHub</string>
     <string name="source_repo_url" translatable="false">https://github.com/abeant/gretel</string>
@@ -29,36 +29,57 @@
     <string name="back_label">Back</string>
     <string name="disclosure_indicator" translatable="false">›</string>
 
-    <string name="hatch_lesson_title">Using Home</string>
-    <string name="hatch_lesson_body">Use Home once to return to your chosen app. Use Home twice quickly to open Gretel\'s settings.\n\nYou can change the double-Home timing later in settings.</string>
-    <string name="missing_door_banner">That app is no longer installed. Choose another.</string>
+    <string name="page_previous">Previous</string>
+    <string name="page_next">Next</string>
+    <string name="page_indicator" translatable="false">%1$d / %2$d</string>
+    <string name="page_indicator_placeholder" translatable="false">1 / 1</string>
+    <string name="page_progress">Page %1$d of %2$d</string>
+
+    <string name="hatch_lesson_title">Getting back</string>
+    <string name="hatch_lesson_body">Home once returns you to your chosen app.\n\nHome twice quickly opens Gretel instead. If the second press keeps missing, choose a more relaxed double-Home timing in settings.\n\nIf you are ever stuck, Gretel is also listed under Apps in Android settings, and you can choose another home app there at any time.</string>
+    <string name="missing_door_banner">That app is no longer installed. Tap to choose another.</string>
+    <string name="not_home_banner">Gretel is not your home app yet. Tap to set it.</string>
+    <string name="relaunch_loop_banner">%1$s closed several times in a row, so Gretel stopped reopening it. Tap to try again.</string>
     <string name="section_your_app">Your app</string>
     <string name="section_opening">Opening</string>
-    <string name="section_getting_back">Getting back</string>
     <string name="section_device">Device</string>
+    <string name="section_help">Help</string>
     <string name="section_door">App</string>
     <string name="android_settings">Android settings</string>
-    <string name="open_on_boot">After a restart</string>
+    <string name="open_on_boot">Open after a restart</string>
     <string name="section_home">Home app</string>
     <string name="setting_with_value">%1$s: %2$s</string>
-    <string name="section_hatch_timing">Timing</string>
-    <string name="window_500">500 ms</string>
-    <string name="window_800">800 ms</string>
-    <string name="window_1200">1200 ms</string>
-    <string name="open_now">Open now</string>
+    <string name="section_hatch_timing">Double-Home timing</string>
+    <string name="return_to_app">Return to %1$s</string>
+    <string name="choose_app_label">Choose an app</string>
     <string name="section_display">Theme</string>
-    <string name="theme_auto">Auto</string>
-    <string name="theme_white">White</string>
-    <string name="theme_black">Black</string>
     <string name="about_license">About and licence</string>
     <string name="door_none">No app chosen</string>
     <string name="door_missing">Not installed: %1$s</string>
-    <string name="relaunch_on_close">If the app quits</string>
+    <string name="relaunch_on_close">Reopen if it quits</string>
+
+    <string name="timing_title">Double-Home timing</string>
+    <string name="timing_body">How quickly Home must be pressed twice to open Gretel instead of your app.</string>
+    <string name="timing_quick">Quick</string>
+    <string name="timing_quick_desc">Half a second between presses</string>
+    <string name="timing_normal">Normal</string>
+    <string name="timing_normal_desc">0.8 seconds between presses</string>
+    <string name="timing_relaxed">Relaxed</string>
+    <string name="timing_relaxed_desc">1.2 seconds between presses</string>
+
+    <string name="theme_title">Theme</string>
+    <string name="theme_body">Applies to Gretel\'s own screens. Your chosen app keeps its own look.</string>
+    <string name="theme_auto">Auto</string>
+    <string name="theme_auto_desc">Follows the device\'s dark mode</string>
+    <string name="theme_white">White</string>
+    <string name="theme_white_desc">Black text on white</string>
+    <string name="theme_black">Black</string>
+    <string name="theme_black_desc">White text on black</string>
 
     <string name="replay_intro">Show the intro again</string>
     <string name="about_title">About</string>
     <string name="about_version">Gretel %1$s (%2$d)</string>
-    <string name="about_identity">Gretel is an anti-launcher for Android. Choose an app and Gretel makes it the place your device returns to.\n\nGretel does not lock your device. Use Home twice quickly to open its settings, choose another home app in Android settings, or uninstall it like any other app.</string>
+    <string name="about_identity">Gretel is an anti-launcher for Android. Choose an app and Gretel makes it the place your device returns to.\n\nGretel does not lock your device. Home twice quickly opens its settings, Android settings let you choose another home app, and you can uninstall it like any other app.</string>
     <string name="about_privacy">Gretel collects nothing. No accounts, analytics, ads, or network access.</string>
     <string name="about_license_heading">Apache License 2.0</string>
     <string name="about_license_fallback">Licensed under the Apache License, Version 2.0. See the LICENSE file in the source repository.</string>

@@ -12,10 +12,9 @@
     tools:ignore="VectorRaster">
     <group android:translateX="86">
         <path
-            android:fillColor="#00000000"
-            android:pathData="M52.0,20.0 H228.0 A32,32 0 0 1 260.0,52.0 V228.0 A32,32 0 0 1 228.0,260.0 H52.0 A32,32 0 0 1 20.0,228.0 V52.0 A32,32 0 0 1 52.0,20.0 Z"
-            android:strokeWidth="5"
-            android:strokeColor="?android:attr/textColorPrimary" />
+            android:fillColor="?android:attr/textColorPrimary"
+            android:fillType="evenOdd"
+            android:pathData="M52.00,17.50 H228.00 A34.50,34.50 0 0 1 262.50,52.00 V228.00 A34.50,34.50 0 0 1 228.00,262.50 H52.00 A34.50,34.50 0 0 1 17.50,228.00 V52.00 A34.50,34.50 0 0 1 52.00,17.50 Z M52.00,22.50 H228.00 A29.50,29.50 0 0 1 257.50,52.00 V228.00 A29.50,29.50 0 0 1 228.00,257.50 H52.00 A29.50,29.50 0 0 1 22.50,228.00 V52.00 A29.50,29.50 0 0 1 52.00,22.50 Z" />
 
         <group android:translateX="75" android:translateY="75">
             <path
@@ -69,35 +68,20 @@
     </group>
 
     <path
-        android:fillColor="#00000000"
-        android:pathData="M346,75 L516,140"
-        android:strokeWidth="6"
-        android:strokeColor="?android:attr/textColorPrimary"
-        android:strokeLineCap="round" />
+        android:fillColor="?android:attr/textColorPrimary"
+        android:pathData="M344.929,77.802 L514.929,142.802 A3.000,3.000 0 0 0 517.071,137.198 L347.071,72.198 A3.000,3.000 0 0 0 344.929,77.802 Z" />
     <path
-        android:fillColor="#00000000"
-        android:pathData="M346,107.5 L516,140"
-        android:strokeWidth="6"
-        android:strokeColor="?android:attr/textColorPrimary"
-        android:strokeLineCap="round" />
+        android:fillColor="?android:attr/textColorPrimary"
+        android:pathData="M345.437,110.447 L515.437,142.947 A3.000,3.000 0 0 0 516.563,137.053 L346.563,104.553 A3.000,3.000 0 0 0 345.437,110.447 Z" />
     <path
-        android:fillColor="#00000000"
-        android:pathData="M346,140 L516,140"
-        android:strokeWidth="6"
-        android:strokeColor="?android:attr/textColorPrimary"
-        android:strokeLineCap="round" />
+        android:fillColor="?android:attr/textColorPrimary"
+        android:pathData="M346.000,143.000 L516.000,143.000 A3.000,3.000 0 0 0 516.000,137.000 L346.000,137.000 A3.000,3.000 0 0 0 346.000,143.000 Z" />
     <path
-        android:fillColor="#00000000"
-        android:pathData="M346,172.5 L516,140"
-        android:strokeWidth="6"
-        android:strokeColor="?android:attr/textColorPrimary"
-        android:strokeLineCap="round" />
+        android:fillColor="?android:attr/textColorPrimary"
+        android:pathData="M346.563,175.447 L516.563,142.947 A3.000,3.000 0 0 0 515.437,137.053 L345.437,169.553 A3.000,3.000 0 0 0 346.563,175.447 Z" />
     <path
-        android:fillColor="#00000000"
-        android:pathData="M346,205 L516,140"
-        android:strokeWidth="6"
-        android:strokeColor="?android:attr/textColorPrimary"
-        android:strokeLineCap="round" />
+        android:fillColor="?android:attr/textColorPrimary"
+        android:pathData="M347.071,207.802 L517.071,142.802 A3.000,3.000 0 0 0 514.929,137.198 L344.929,202.198 A3.000,3.000 0 0 0 347.071,207.802 Z" />
     <path
         android:fillColor="?android:attr/textColorPrimary"
         android:pathData="M514,126 L540,140 L514,154 Z" />

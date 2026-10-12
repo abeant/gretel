@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          # Release notes link to the previous tag, which a shallow clone lacks.
+          fetch-depth: 0
 
       - name: JDK 17
         uses: actions/setup-java@v6
@@ -44,11 +47,23 @@ jobs:
           done
 
           VERSION_NAME=$(sed -n 's/.*versionName = "\([^"]*\)".*/\1/p' app/build.gradle.kts)
+          VERSION_CODE=$(sed -n 's/.*versionCode = \([0-9][0-9]*\).*/\1/p' app/build.gradle.kts | head -n1)
           if [ "${GITHUB_EVENT_NAME}" = "push" ] && [ "v${VERSION_NAME}" != "${GITHUB_REF_NAME}" ]; then
             echo "Tag ${GITHUB_REF_NAME} does not match versionName ${VERSION_NAME}" >&2
             exit 1
           fi
+
+          # The changelog is the release body and the text F-Droid shows. A
+          # missing file would publish a blank release, so stop before building.
+          CHANGELOG="fastlane/metadata/android/en-US/changelogs/${VERSION_CODE}.txt"
+          if [ "${GITHUB_EVENT_NAME}" = "push" ] && [ ! -s "${CHANGELOG}" ]; then
+            echo "Missing changelog for versionCode ${VERSION_CODE}: ${CHANGELOG}" >&2
+            exit 1
+          fi
+
           echo "RELEASE_VERSION=v${VERSION_NAME}" >> "${GITHUB_ENV}"
+          echo "VERSION_CODE=${VERSION_CODE}" >> "${GITHUB_ENV}"
+          echo "CHANGELOG=${CHANGELOG}" >> "${GITHUB_ENV}"
 
           printf '%s' "${ANDROID_KEYSTORE_BASE64}" | base64 --decode > "${RUNNER_TEMP}/gretel.jks"
 
@@ -82,23 +97,53 @@ jobs:
           retention-days: 30
           if-no-files-found: error
 
+      - name: Compose release notes
+        if: github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          NOTES="${RUNNER_TEMP}/release-notes.md"
+          cat "${CHANGELOG}" > "${NOTES}"
+
+          PREVIOUS=$(git tag --list 'v*' --sort=-version:refname \
+            | grep -vx "${GITHUB_REF_NAME}" | head -n1 || true)
+          {
+            echo
+            echo "## Install"
+            echo
+            echo "Download \`gretel.apk\` below and open it on your Android device. If Android asks, allow your browser or file manager to install unknown apps."
+            echo
+            echo "Verify the download against \`SHA256SUMS\` if you want to confirm the file is intact."
+            if [ -n "${PREVIOUS}" ]; then
+              echo
+              echo "**Every commit since ${PREVIOUS}:** https://github.com/${GITHUB_REPOSITORY}/compare/${PREVIOUS}...${GITHUB_REF_NAME}"
+            fi
+          } >> "${NOTES}"
+
+          echo "----- release notes -----"
+          cat "${NOTES}"
+          echo "RELEASE_NOTES=${NOTES}" >> "${GITHUB_ENV}"
+
       - name: Publish GitHub Release
         if: github.event_name == 'push'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set -euo pipefail
           if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
             gh release upload "${GITHUB_REF_NAME}" \
               dist/gretel.apk \
               dist/gretel.aab \
               dist/SHA256SUMS \
               --clobber
+            gh release edit "${GITHUB_REF_NAME}" \
+              --notes-file "${RELEASE_NOTES}" \
+              --title "Gretel ${GITHUB_REF_NAME#v}"
           else
             gh release create "${GITHUB_REF_NAME}" \
               dist/gretel.apk \
               dist/gretel.aab \
               dist/SHA256SUMS \
               --verify-tag \
-              --generate-notes \
+              --notes-file "${RELEASE_NOTES}" \
               --title "Gretel ${GITHUB_REF_NAME#v}"
           fi

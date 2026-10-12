@@ -1,11 +1,14 @@
 package com.abeant.gretel
 
-import android.app.NotificationManager
 import android.app.Application
+import android.app.NotificationManager
 import android.content.Context
 import com.abeant.gretel.catalog.AppCatalog
 import com.abeant.gretel.data.AssignedAppStore
+import com.abeant.gretel.hatch.BootGate
 import com.abeant.gretel.hatch.HatchDetector
+import com.abeant.gretel.hatch.HomeDispatcher
+import com.abeant.gretel.hatch.RelaunchGuard
 
 class GretelApp : Application() {
     lateinit var store: AssignedAppStore
@@ -14,10 +17,11 @@ class GretelApp : Application() {
     lateinit var catalog: AppCatalog
         private set
 
-    val hatchDetector = HatchDetector()
+    lateinit var dispatcher: HomeDispatcher
+        private set
 
-    @Volatile
-    var bootLaunchConsumed: Boolean = false
+    val hatchDetector = HatchDetector()
+    val relaunchGuard = RelaunchGuard()
 
     override fun onCreate() {
         super.onCreate()
@@ -25,6 +29,7 @@ class GretelApp : Application() {
             getSharedPreferences(AssignedAppStore.PREFERENCES_NAME, Context.MODE_PRIVATE),
         )
         catalog = AppCatalog(packageManager, packageName)
+        dispatcher = HomeDispatcher(hatchDetector, BootGate(store))
 
         // Version 0.1 briefly posted a permanent settings shortcut. It was not
         // portable across e-reader firmware and was not an ongoing user task.

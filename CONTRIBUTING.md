@@ -24,10 +24,44 @@ Changes to the Home dispatch path, persistence, package visibility, or backgroun
 
 Open a PR against `main`. Keep the repo private until the owner publishes it. Do not push a `v*` tag unless a release is intended.
 
-## Version bumps
+## Releasing
+
+Pushing a `v*` tag does the whole release. The workflow builds and signs the
+APK and AAB, verifies the signature, writes `SHA256SUMS`, and creates the
+GitHub Release with the files attached. Nothing is uploaded by hand.
+
+Pick the number by what a user would notice, not by how much work it was.
+
+| | When |
+|---|---|
+| `0.1.1` | Fixes only. Nothing looks or behaves differently. |
+| `0.2.0` | A screen, a setting, or a behaviour changed. |
+| `1.0.0` | The design is settled. Not a reward for a large release. |
+
+Before tagging:
 
 ```bash
-./scripts/bump-version.sh 0.1.1
+./scripts/bump-version.sh 0.2.0
 ```
 
-Add `fastlane/metadata/android/en-US/changelogs/<versionCode>.txt` when you bump `versionCode`.
+Then write `fastlane/metadata/android/en-US/changelogs/<versionCode>.txt` and
+the `es-419` copy of it. The English file becomes the body of the GitHub
+Release as well as the text F-Droid shows, so write it for a reader, not as a
+commit list. Update `metadata/com.abeant.gretel.yml` with the new build block
+and `CurrentVersion`. Run the build once locally:
+
+```bash
+./gradlew :app:lintRelease :app:testReleaseUnitTest :app:assembleRelease
+```
+
+Then merge to `main` and tag it:
+
+```bash
+git checkout main && git pull
+git tag v0.2.0
+git push origin v0.2.0
+```
+
+The workflow refuses to publish if the tag does not match `versionName`, or if
+the changelog for that `versionCode` is missing, so a mislabelled or silent
+release fails before anything is built.

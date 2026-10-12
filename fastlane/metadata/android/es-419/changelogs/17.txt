@@ -1,0 +1,5 @@
+Todas las pantallas ahora se paginan en lugar de desplazarse, como en un lector electrónico. Pasa de página con los botones, con un deslizamiento o con las teclas de página de tu dispositivo.
+
+Los ajustes se reorganizaron para caber en pantallas pequeñas, con un aviso cuando Gretel no es tu app de inicio y un botón para volver a la app elegida. El intervalo del doble Inicio y el tema ahora son rápido, normal o relajado y automático, blanco o negro, cada uno en su propia página.
+
+Si la app elegida se cierra una y otra vez, Gretel deja de reabrirla y explica por qué en lugar de entrar en un bucle. "Abrir tras un reinicio" ahora detecta el reinicio de forma fiable, aunque desbloquees el dispositivo minutos después.

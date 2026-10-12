@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PagedColumn_Layout">
+        <!-- Keep this row on the same page as the row after it. Section headers use it. -->
+        <attr name="layout_keepWithNext" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingRow">
+        <attr name="rowLabel" format="string|reference" />
+        <attr name="rowValue" format="string|reference" />
+        <attr name="rowToggle" format="boolean" />
+        <attr name="rowChevron" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:orientation="horizontal"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <TextView
+        android:id="@+id/rowLabel"
+        style="@style/Text.Gretel.Body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="Label" />
+
+    <TextView
+        android:id="@+id/rowValue"
+        style="@style/Text.Gretel.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:visibility="gone"
+        tools:text="Value"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/rowChevron"
+        style="@style/Text.Gretel.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:importantForAccessibility="no"
+        android:text="@string/disclosure_indicator" />
+
+    <CheckBox
+        android:id="@+id/rowCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:button="@drawable/check_box"
+        android:clickable="false"
+        android:focusable="false"
+        android:importantForAccessibility="no"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:visibility="gone" />
+</merge>

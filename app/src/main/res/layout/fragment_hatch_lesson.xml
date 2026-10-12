@@ -22,15 +22,14 @@
         style="@style/Text.Gretel.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="@string/hatch_lesson_title" />
 
-    <ScrollView
+    <com.abeant.gretel.ui.PagedColumn
+        android:id="@+id/lessonPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true"
-        android:overScrollMode="never">
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/lessonBody"
@@ -38,15 +37,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="12dp"
             android:maxWidth="@dimen/text_column"
             android:text="@string/hatch_lesson_body" />
-    </ScrollView>
+    </com.abeant.gretel.ui.PagedColumn>
 
     <Button
         android:id="@+id/finishButton"
         style="@style/Widget.Gretel.Button.Filled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="@string/continue_label" />
 </LinearLayout>

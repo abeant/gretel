@@ -5,56 +5,50 @@
     android:orientation="vertical"
     android:padding="@dimen/page_padding">
 
-    <ScrollView
+    <com.abeant.gretel.ui.PagedColumn
+        android:id="@+id/welcomePager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true"
-        android:overScrollMode="never">
+        android:layout_weight="1">
 
-        <LinearLayout
+        <include layout="@layout/include_lockup" />
+
+        <TextView
+            style="@style/Text.Gretel.Body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="16dp"
+            android:text="@string/tagline"
+            android:textStyle="italic" />
 
-            <include layout="@layout/include_lockup" />
+        <include
+            android:id="@+id/stepRow"
+            layout="@layout/include_steps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
 
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/tagline"
-                android:textStyle="italic" />
+        <include
+            layout="@layout/include_diagram"
+            android:layout_width="match_parent"
+            android:layout_height="148dp"
+            android:layout_marginTop="24dp" />
 
-            <include
-                android:id="@+id/stepRow"
-                layout="@layout/include_steps"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp" />
-
-            <include
-                layout="@layout/include_diagram"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp" />
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:maxWidth="@dimen/text_column"
-                android:text="@string/welcome_body" />
-        </LinearLayout>
-    </ScrollView>
+        <TextView
+            style="@style/Text.Gretel.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"
+            android:maxWidth="@dimen/text_column"
+            android:text="@string/welcome_body" />
+    </com.abeant.gretel.ui.PagedColumn>
 
     <Button
         android:id="@+id/continueButton"
         style="@style/Widget.Gretel.Button.Filled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="@string/continue_label" />
 </LinearLayout>

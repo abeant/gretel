@@ -6,13 +6,13 @@ MADE FOR ONE-PURPOSE DEVICES
 Gretel was built for e-readers, where a reading app such as KOReader should simply be the device. It works just as well on a spare phone or tablet you want to turn into a distraction-free reading, writing, reference, or dashboard tool.
 
 BUILT FOR E-INK
-High-contrast black and white, large touch targets, no ripples, and no unnecessary animation. Choose an automatic, white, or true black theme.
+High-contrast black and white, large touch targets, no ripples, and no animation. Every screen is paged, never scrolled, and e-reader page buttons turn the pages. Choose an automatic, white, or true black theme.
 
 NEVER STUCK
-Press Home once to return to your chosen app. Press Home twice quickly to open Gretel's settings. The double-Home timing can be set to 500, 800, or 1200 ms. You can change your app, pick another home screen in Android settings, or uninstall Gretel at any time.
+Press Home once to return to your chosen app. Press Home twice quickly to open Gretel's settings. The double-Home timing can be set to quick, normal, or relaxed. You can change your app, pick another home screen in Android settings, or uninstall Gretel at any time.
 
 SWITCHES YOU CONTROL
-Gretel can reopen your app after a restart, and bring it back when the app exits. Both behaviors are settings you can turn off.
+Gretel can reopen your app after a restart, and bring it back when the app exits. Both behaviors are settings you can turn off. If the app keeps crashing, Gretel stops reopening it and shows its settings instead.
 
 NOT A KIOSK
 Gretel does not use Device Admin, Accessibility services, screen overlays, or lock task mode. It is a home app, not a cage. If you need to stop someone from leaving an app, Gretel is the wrong tool.

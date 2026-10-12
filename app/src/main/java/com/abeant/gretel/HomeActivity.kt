@@ -2,9 +2,9 @@ package com.abeant.gretel
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.SystemClock
 import androidx.appcompat.app.AppCompatActivity
-import com.abeant.gretel.hatch.HatchDetector
+import com.abeant.gretel.hatch.HatchReason
+import com.abeant.gretel.hatch.HomeDispatcher
 import com.abeant.gretel.launch.DoorLauncher
 import com.abeant.gretel.ui.ActivityMotion
 
@@ -42,8 +42,19 @@ class HomeActivity : AppCompatActivity() {
         val snapshot = app.store.snapshot()
         if (!snapshot.relaunchOnClose || !snapshot.onboardingDone) return
         val assigned = snapshot.assignedPackage
-        if (assigned.isNullOrBlank() || !app.catalog.isInstalled(assigned)) return
-        DoorLauncher.launch(this, assigned)
+        if (assigned.isNullOrBlank()) return
+        val intent = DoorLauncher.launchIntent(this, assigned)
+        if (intent == null) {
+            openHatch(HatchReason.MISSING_APP)
+            return
+        }
+        if (!app.relaunchGuard.allowRelaunch()) {
+            openHatch(HatchReason.RELAUNCH_LOOP)
+            return
+        }
+        if (!DoorLauncher.start(this, intent)) {
+            openHatch(HatchReason.MISSING_APP)
+        }
     }
 
     override fun finish() {
@@ -55,51 +66,33 @@ class HomeActivity : AppCompatActivity() {
         val app = application as GretelApp
         val snapshot = app.store.snapshot()
 
-        if (!snapshot.onboardingDone) {
-            openHatch(missingDoor = false)
-            return
+        var launchIntent: Intent? = null
+        val decision = app.dispatcher.decide(snapshot) { packageName ->
+            launchIntent = DoorLauncher.launchIntent(this, packageName)
+            launchIntent != null
         }
 
-        val assigned = snapshot.assignedPackage
-        if (assigned.isNullOrBlank() || !app.catalog.isInstalled(assigned)) {
-            openHatch(missingDoor = true)
-            return
-        }
-
-        val isBoot = !app.bootLaunchConsumed && SystemClock.elapsedRealtime() < BOOT_WINDOW_MS
-        if (isBoot) {
-            app.bootLaunchConsumed = true
-            if (!snapshot.openOnBoot) {
-                openHatch(missingDoor = false)
-                return
-            }
-        }
-
-        when (app.hatchDetector.onHomeDelivery(snapshot.hatchWindowMs)) {
-            HatchDetector.Decision.OPEN_HATCH -> openHatch(missingDoor = false)
-            HatchDetector.Decision.LAUNCH_ASSIGNED -> {
-                val launched = DoorLauncher.launch(this, assigned)
+        when (decision) {
+            is HomeDispatcher.Decision.OpenHatch -> openHatch(decision.reason)
+            is HomeDispatcher.Decision.Launch -> {
+                val intent = launchIntent
+                val launched = intent != null && DoorLauncher.start(this, intent)
                 if (!launched) {
-                    openHatch(missingDoor = true)
-                } else if (!snapshot.relaunchOnClose) {
-                    finish()
+                    openHatch(HatchReason.MISSING_APP)
+                } else {
+                    app.relaunchGuard.noteLaunch()
+                    if (!snapshot.relaunchOnClose) finish()
                 }
             }
         }
     }
 
-    companion object {
-        private const val BOOT_WINDOW_MS = 90_000L
-    }
-
-    private fun openHatch(missingDoor: Boolean) {
+    private fun openHatch(reason: HatchReason) {
         val intent = Intent(this, HatchActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            if (missingDoor) {
-                putExtra(HatchActivity.EXTRA_MISSING_DOOR, true)
-            }
+            putExtra(HatchActivity.EXTRA_REASON, reason.name)
         }
         startActivity(intent)
         finish()

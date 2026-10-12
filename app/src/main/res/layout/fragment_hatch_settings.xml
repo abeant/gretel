@@ -1,470 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.abeant.gretel.ui.SnapScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:overScrollMode="never">
+    android:orientation="vertical"
+    android:padding="@dimen/page_padding">
 
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/page_padding">
+        android:layout_height="32dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitStart"
+        android:src="@drawable/gretel_lockup"
+        app:tint="?android:attr/textColorPrimary" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/tap_min"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/back_label" />
-
-            <ImageView
-                android:id="@+id/headerLockup"
-                android:layout_width="0dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="12dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                android:scaleType="fitStart"
-                android:src="@drawable/gretel_lockup"
-                app:tint="?android:attr/textColorPrimary" />
-        </LinearLayout>
+    <com.abeant.gretel.ui.PagedColumn
+        android:id="@+id/settingsPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1">
 
         <TextView
-            android:id="@+id/pickNewDoorBanner"
+            android:id="@+id/banner"
             style="@style/Text.Gretel.Body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/banner_outline"
             android:clickable="true"
             android:focusable="true"
             android:minHeight="@dimen/tap_min"
             android:padding="12dp"
-            android:text="@string/missing_door_banner"
             android:textStyle="bold"
             android:visibility="gone" />
 
-        <!-- YOUR APP -->
         <TextView
-            style="@style/Text.Gretel.Label"
+            style="@style/Text.Gretel.SectionHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/settings_section_gap"
-            android:text="@string/section_your_app" />
+            android:text="@string/section_your_app"
+            app:layout_keepWithNext="true" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:id="@+id/changeDoorButton"
+        <com.abeant.gretel.ui.SettingRow
+            android:id="@+id/appRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
+            app:rowLabel="@string/section_door"
+            app:rowValue="@string/door_none" />
 
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/section_door" />
-
-            <TextView
-                android:id="@+id/doorValue"
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/door_none" />
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/disclosure_indicator" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:id="@+id/openNowButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/open_now" />
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/disclosure_indicator" />
-        </LinearLayout>
-
-        <!-- OPENING -->
-        <TextView
-            style="@style/Text.Gretel.Label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/settings_section_gap"
-            android:text="@string/section_opening" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:id="@+id/bootRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/open_on_boot" />
-
-            <CheckBox
-                android:id="@+id/bootToggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:focusable="false"
-                android:importantForAccessibility="no"
-                android:minHeight="0dp"
-                android:minWidth="0dp" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:id="@+id/relaunchRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/relaunch_on_close" />
-
-            <CheckBox
-                android:id="@+id/relaunchToggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:focusable="false"
-                android:importantForAccessibility="no"
-                android:minHeight="0dp"
-                android:minWidth="0dp" />
-        </LinearLayout>
-
-        <!-- GETTING BACK -->
-        <TextView
-            style="@style/Text.Gretel.Label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/settings_section_gap"
-            android:text="@string/section_getting_back" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/section_hatch_timing" />
-
-            <Button
-                android:id="@+id/window500"
-                style="@style/Widget.Gretel.Button.Chip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/window_500" />
-
-            <Button
-                android:id="@+id/window800"
-                style="@style/Widget.Gretel.Button.Chip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:fontFamily="monospace"
-                android:text="@string/window_800" />
-
-            <Button
-                android:id="@+id/window1200"
-                style="@style/Widget.Gretel.Button.Chip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:fontFamily="monospace"
-                android:text="@string/window_1200" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:id="@+id/getBackRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/hatch_lesson_title" />
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/disclosure_indicator" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:id="@+id/replayIntroRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/replay_intro" />
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/disclosure_indicator" />
-        </LinearLayout>
-
-        <!-- DEVICE -->
-        <TextView
-            style="@style/Text.Gretel.Label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/settings_section_gap"
-            android:text="@string/section_device" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:id="@+id/themeRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/section_display" />
-
-            <TextView
-                android:id="@+id/themeValue"
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/theme_auto" />
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/disclosure_indicator" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
+        <com.abeant.gretel.ui.SettingRow
             android:id="@+id/homeRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
+            app:rowLabel="@string/section_home"
+            app:rowValue="@string/home_status_no" />
 
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/section_home" />
-
-            <TextView
-                android:id="@+id/homeValue"
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_status_no" />
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/disclosure_indicator" />
-        </LinearLayout>
-
-        <View
+        <TextView
+            style="@style/Text.Gretel.SectionHeader"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:background="@drawable/hairline" />
+            android:layout_height="wrap_content"
+            android:text="@string/section_opening"
+            app:layout_keepWithNext="true" />
 
-        <LinearLayout
+        <com.abeant.gretel.ui.SettingRow
+            android:id="@+id/bootRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rowLabel="@string/open_on_boot"
+            app:rowToggle="true" />
+
+        <com.abeant.gretel.ui.SettingRow
+            android:id="@+id/relaunchRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rowLabel="@string/relaunch_on_close"
+            app:rowToggle="true" />
+
+        <com.abeant.gretel.ui.SettingRow
+            android:id="@+id/timingRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rowLabel="@string/section_hatch_timing"
+            app:rowValue="@string/timing_normal" />
+
+        <TextView
+            style="@style/Text.Gretel.SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/section_device"
+            app:layout_keepWithNext="true" />
+
+        <com.abeant.gretel.ui.SettingRow
+            android:id="@+id/themeRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rowLabel="@string/section_display"
+            app:rowValue="@string/theme_auto" />
+
+        <com.abeant.gretel.ui.SettingRow
             android:id="@+id/androidSettingsRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
+            app:rowLabel="@string/android_settings" />
 
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/android_settings" />
-
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/disclosure_indicator" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/hairline"
-            android:background="@drawable/hairline" />
-
-        <LinearLayout
-            android:id="@+id/aboutButton"
+        <TextView
+            style="@style/Text.Gretel.SectionHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/focus_outline"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:minHeight="@dimen/settings_row"
-            android:orientation="horizontal">
+            android:text="@string/section_help"
+            app:layout_keepWithNext="true" />
 
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/about_license" />
+        <com.abeant.gretel.ui.SettingRow
+            android:id="@+id/getBackRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rowLabel="@string/hatch_lesson_title" />
 
-            <TextView
-                style="@style/Text.Gretel.Body"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/disclosure_indicator" />
-        </LinearLayout>
-    </LinearLayout>
-</com.abeant.gretel.ui.SnapScrollView>
+        <com.abeant.gretel.ui.SettingRow
+            android:id="@+id/aboutRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rowLabel="@string/about_license" />
+    </com.abeant.gretel.ui.PagedColumn>
+
+    <Button
+        android:id="@+id/primaryButton"
+        style="@style/Widget.Gretel.Button.Filled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/choose_app_label" />
+</LinearLayout>
