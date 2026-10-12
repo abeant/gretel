@@ -70,8 +70,32 @@
 
     <path
         android:fillColor="#00000000"
-        android:pathData="M346.0,75.0 L516.0,140.0 M346.0,107.5 L516.0,140.0 M346.0,140.0 L516.0,140.0 M346.0,172.5 L516.0,140.0 M346.0,205.0 L516.0,140.0"
-        android:strokeWidth="2.4"
+        android:pathData="M346,75 L516,140"
+        android:strokeWidth="6"
+        android:strokeColor="?android:attr/textColorPrimary"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M346,107.5 L516,140"
+        android:strokeWidth="6"
+        android:strokeColor="?android:attr/textColorPrimary"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M346,140 L516,140"
+        android:strokeWidth="6"
+        android:strokeColor="?android:attr/textColorPrimary"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M346,172.5 L516,140"
+        android:strokeWidth="6"
+        android:strokeColor="?android:attr/textColorPrimary"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M346,205 L516,140"
+        android:strokeWidth="6"
         android:strokeColor="?android:attr/textColorPrimary"
         android:strokeLineCap="round" />
     <path
